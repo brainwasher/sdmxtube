@@ -1,0 +1,50 @@
+digraph DependecyMap { rankdir=LR;
+  
+  
+			"SIMM:EquitySecurity(1.0.0)"
+			[shape=record,
+				URL="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurity/1.0.0",
+				target=_blank,
+				label="
+					{SIMM|EquitySecurity|1.0.0}
+					 
+						|{<ESI> 
+						Dim - SIMM.REF.CS_REFERENCE:ESI
+						\n
+						}
+					
+						|{<CUR> 
+						Att - SIMM.REF.CS_REFERENCE:CUR}
+					
+						|{<LFMD> 
+						Att - SIMM.REF.CS_REFERENCE:LFMD}
+					
+				",
+			];
+		
+			"SIMM:EquitySecurityPosition(1.0.0)"
+			[shape=record,
+				URL="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurityPosition/1.0.0",
+				target=_blank,
+				label="
+					{SIMM|EquitySecurityPosition|1.0.0}
+					 
+						|{<IPI> 
+						Dim - SIMM.REF.CS_REFERENCE:IPI
+						\n
+						}
+					 
+						|{<ESI> 
+						Dim - SIMM.REF.CS_REFERENCE:ESI
+						\n
+						}
+					
+						|{<NOS> 
+						Att - SIMM.REF.CS_REFERENCE:NOS}
+					
+				",
+			];
+		
+			"SIMM:EquitySecurityPosition(1.0.0)":ESI
+			->
+			"SIMM:EquitySecurity(1.0.0)":ESI}
