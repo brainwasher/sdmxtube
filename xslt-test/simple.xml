@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <concepts>
+    <concept id="1" version="1">
+      <name>This is the name of 1.1</name>
+    </concept>
+    <concept id="1" version="2">
+      <name>This is the name of 1.2</name>
+    </concept>
+    <concept id="2" version="1">
+      <name>This is the name of 2.1</name>
+    </concept>
+  </concepts>
+  <structures>
+    <structure id="1">
+      <conceptRef id="2" version="1" />
+    </structure>
+    <structure id="2">
+      <conceptRef id="1" version="2" />
+    </structure>
+  </structures>
+</root>
