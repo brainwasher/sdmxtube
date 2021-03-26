@@ -8,22 +8,26 @@ digraph DependecyMap { rankdir=LR;
 				target=_blank,
 				label="
 					{SIMM|EquitySecurity|1.0.0}
-					 
-						|{
-							<ESI> 
-							Dim - SIMM.REF.CS_REFERENCE:ESI
-							\n
+					
+
+		|{
+			<ESI> 
+			Dim - 
+			SIMM.REF.CS_REFERENCE:ESI
+			\n
           Equity security identifier
           
             
           
         
-						}
-					
-						|{
-							<CUR> 
-							Att - SIMM.REF.CS_REFERENCE:CUR
-							\n
+		}
+	
+
+		|{
+			<CUR> 
+			Att - 
+			SIMM.REF.CS_REFERENCE:CUR
+			\n
           Currency
           
             
@@ -31,19 +35,21 @@ digraph DependecyMap { rankdir=LR;
             
           
         
-						}
-					
-						|{
-							<LFMD> 
-							Att - SIMM.REF.CS_REFERENCE:LFMD
-							\n
+		}
+	
+
+		|{
+			<LFMD> 
+			Att - 
+			SIMM.REF.CS_REFERENCE:LFMD
+			\n
           Legal final maturity date
           
             
           
         
-						}
-					
+		}
+	
 				",
 			];
 		
@@ -54,46 +60,53 @@ digraph DependecyMap { rankdir=LR;
 				target=_blank,
 				label="
 					{SIMM|EquitySecurityPosition|1.0.0}
-					 
-						|{
-							<IPI> 
-							Dim - SIMM.REF.CS_REFERENCE:IPI
-							\n
+					
+
+		|{
+			<IPI> 
+			Dim - 
+			SIMM.REF.CS_REFERENCE:IPI
+			\n
           Investor Party identifier
           
             
           
         
-						}
-					 
-						|{
-							<ESI> 
-							Dim - SIMM.REF.CS_REFERENCE:ESI
-							\n
+		}
+	
+
+		|{
+			<ESI> 
+			Dim - 
+			SIMM.REF.CS_REFERENCE:ESI
+			\n
           Equity security identifier
           
             
           
         
-						}
-					
-						|{
-							<NOS> 
-							Att - SIMM.REF.CS_REFERENCE:NOS
-							\n
+		}
+	
+
+		|{
+			<NOS> 
+			Att - 
+			SIMM.REF.CS_REFERENCE:NOS
+			\n
           Number of shares
           
             
           
         
-						}
-					
+		}
+	
 				",
 			];
 		
 			"SIMM:EquitySecurityPosition(1.0.0)":ESI
 			->
 			"SIMM:EquitySecurity(1.0.0)":ESI
+			
 			
 			[dir="both" arrowhead="crowodot", arrowtail="teetee"]
 		}
