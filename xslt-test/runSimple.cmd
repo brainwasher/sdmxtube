@@ -2,7 +2,7 @@
 
 echo ...
 
-%~dp0..\bin-win\libxml\xsltproc.exe %~dp0simple.xslt %~dp0simple.xml > %~dp0simple.txt
+java -jar %~dp0../bin-java/SaxonHE/saxon-he-10.3.jar  -s:%~dp0simple.xml -xsl:%~dp0simple.xslt -o:%~dp0simple.txt
 
 echo Done.
 echo.

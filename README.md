@@ -2,6 +2,7 @@
 SDMX-related tools, scripts and ideas. Why? Because I can...
 
 ## sdmxtube projects
+* **bin-java**: binaries (jar files) for Java (should be cross-platform)
 * **bin-win**: binaries for Windows
 * **lib**: library, with one subfolder per technology
 * **sdmx2gv**: SDMX to GraphViz DOT visualisations of SDMX artefacts as a graph
