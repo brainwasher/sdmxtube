@@ -29,7 +29,7 @@
 	<xsl:template match="mes:Structures">
 		<!-- loop through DSDs -->
 		<xsl:for-each select=".//str:DataStructure">
-			<!-- DSD agency | name | version -->
+			<!-- DSD-Agency:Name(Version) -->
 			"<xsl:value-of select="@agencyID" />:<xsl:value-of select="@id" />(<xsl:value-of select="@version" />)"
 			[shape=record,
 				URL="<xsl:value-of select="$registryRestUrl"/>/datastructure/<xsl:value-of select="@agencyID" />/<xsl:value-of select="@id" />/<xsl:value-of select="@version" />",
@@ -37,19 +37,14 @@
 				label="
 					{<xsl:value-of select="@agencyID" />|<xsl:value-of select="@id" />|<xsl:value-of select="@version" />}
 					<xsl:for-each select=".//str:DimensionList/str:Dimension"> 
-						|{
-							&lt;<xsl:value-of select="@id" />&gt; 
-							Dim - <xsl:value-of select="./str:ConceptIdentity/Ref/@agencyID" />.<xsl:value-of select="./str:ConceptIdentity/Ref/@maintainableParentID" />:<xsl:value-of select="@id" />
-							\n<xsl:value-of select="key('concept',./str:ConceptIdentity/Ref/@id)" />
-						}
+						<xsl:call-template name="conceptLabel">
+							<xsl:with-param name="conceptNode" select="."/>
+						</xsl:call-template>
 					</xsl:for-each>
-					<!-- TODO: create template for concepts in order that Dim and Att do not need to repeat twice -->
 					<xsl:for-each select=".//str:AttributeList/str:Attribute">
-						|{
-							&lt;<xsl:value-of select="@id" />&gt; 
-							Att - <xsl:value-of select="./str:ConceptIdentity/Ref/@agencyID" />.<xsl:value-of select="./str:ConceptIdentity/Ref/@maintainableParentID" />:<xsl:value-of select="@id" />
-							\n<xsl:value-of select="key('concept',./str:ConceptIdentity/Ref/@id)" />
-						}
+						<xsl:call-template name="conceptLabel">
+							<xsl:with-param name="conceptNode" select="."/>
+						</xsl:call-template>
 					</xsl:for-each>
 				",
 			];
@@ -64,6 +59,18 @@
 			<!-- arrowstyles: https://www.graphviz.org/doc/info/arrows.html -->
 			[dir="both" arrowhead="crowodot", arrowtail="teetee"]
 		</xsl:for-each>
+	</xsl:template>
+
+	<!-- template to display a concept within an entity -->
+	<xsl:template name="conceptLabel">
+		<!-- conceptNode is the XPath node for processing -->
+		<xsl:param name="conceptNode" />
+		|{
+			&lt;<xsl:value-of select="$conceptNode/@id" />&gt; 
+			<xsl:value-of select="substring(local-name($conceptNode),1,3)" /> - 
+			<xsl:value-of select="$conceptNode/str:ConceptIdentity/Ref/@agencyID" />.<xsl:value-of select="$conceptNode/str:ConceptIdentity/Ref/@maintainableParentID" />:<xsl:value-of select="$conceptNode/@id" />
+			\n<xsl:value-of select="key('concept',$conceptNode/str:ConceptIdentity/Ref/@id)" />
+		}
 	</xsl:template>
 
 </xsl:stylesheet>
