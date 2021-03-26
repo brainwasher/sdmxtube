@@ -10,6 +10,7 @@ digraph DependecyMap { rankdir=LR;
 					 
 						|{<ESI> 
 						Dim - SIMM.REF.CS_REFERENCE:ESI
+						
 						\n
 						}
 					
@@ -31,11 +32,13 @@ digraph DependecyMap { rankdir=LR;
 					 
 						|{<IPI> 
 						Dim - SIMM.REF.CS_REFERENCE:IPI
+						
 						\n
 						}
 					 
 						|{<ESI> 
 						Dim - SIMM.REF.CS_REFERENCE:ESI
+						
 						\n
 						}
 					

@@ -12,7 +12,7 @@
 <!-- SIMM:EquitySecurity(1.0.0) -->
 <g id="node1" class="node">
 <title>SIMM:EquitySecurity(1.0.0)</title>
-<g id="a_node1"><a xlink:href="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurity/1.0.0" xlink:title="&#10;					{SIMM|EquitySecurity|1.0.0}&#10;					 &#10;						|{&lt;ESI&gt; &#10;						Dim &#45; SIMM.REF.CS_REFERENCE:ESI&#10;						\n&#10;						}&#10;					&#10;						|{&lt;CUR&gt; &#10;						Att &#45; SIMM.REF.CS_REFERENCE:CUR}&#10;					&#10;						|{&lt;LFMD&gt; &#10;						Att &#45; SIMM.REF.CS_REFERENCE:LFMD}&#10;					&#10;				" target="_blank">
+<g id="a_node1"><a xlink:href="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurity/1.0.0" xlink:title="&#10;					{SIMM|EquitySecurity|1.0.0}&#10;					 &#10;						|{&lt;ESI&gt; &#10;						Dim &#45; SIMM.REF.CS_REFERENCE:ESI&#10;						&#10;						\n&#10;						}&#10;					&#10;						|{&lt;CUR&gt; &#10;						Att &#45; SIMM.REF.CS_REFERENCE:CUR}&#10;					&#10;						|{&lt;LFMD&gt; &#10;						Att &#45; SIMM.REF.CS_REFERENCE:LFMD}&#10;					&#10;				" target="_blank">
 <polygon fill="none" stroke="black" points="290,-0.5 290,-92.5 553,-92.5 553,-0.5 290,-0.5"/>
 <text text-anchor="middle" x="327.5" y="-77.3" font-family="Times New Roman,serif" font-size="14.00">SIMM</text>
 <polyline fill="none" stroke="black" points="365,-69.5 365,-92.5 "/>
@@ -31,7 +31,7 @@
 <!-- SIMM:EquitySecurityPosition(1.0.0) -->
 <g id="node2" class="node">
 <title>SIMM:EquitySecurityPosition(1.0.0)</title>
-<g id="a_node2"><a xlink:href="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurityPosition/1.0.0" xlink:title="&#10;					{SIMM|EquitySecurityPosition|1.0.0}&#10;					 &#10;						|{&lt;IPI&gt; &#10;						Dim &#45; SIMM.REF.CS_REFERENCE:IPI&#10;						\n&#10;						}&#10;					 &#10;						|{&lt;ESI&gt; &#10;						Dim &#45; SIMM.REF.CS_REFERENCE:ESI&#10;						\n&#10;						}&#10;					&#10;						|{&lt;NOS&gt; &#10;						Att &#45; SIMM.REF.CS_REFERENCE:NOS}&#10;					&#10;				" target="_blank">
+<g id="a_node2"><a xlink:href="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurityPosition/1.0.0" xlink:title="&#10;					{SIMM|EquitySecurityPosition|1.0.0}&#10;					 &#10;						|{&lt;IPI&gt; &#10;						Dim &#45; SIMM.REF.CS_REFERENCE:IPI&#10;						&#10;						\n&#10;						}&#10;					 &#10;						|{&lt;ESI&gt; &#10;						Dim &#45; SIMM.REF.CS_REFERENCE:ESI&#10;						&#10;						\n&#10;						}&#10;					&#10;						|{&lt;NOS&gt; &#10;						Att &#45; SIMM.REF.CS_REFERENCE:NOS}&#10;					&#10;				" target="_blank">
 <polygon fill="none" stroke="black" points="0,-24.5 0,-116.5 254,-116.5 254,-24.5 0,-24.5"/>
 <text text-anchor="middle" x="28.5" y="-101.3" font-family="Times New Roman,serif" font-size="14.00">SIMM</text>
 <polyline fill="none" stroke="black" points="57,-93.5 57,-116.5 "/>
