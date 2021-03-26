@@ -4,6 +4,7 @@ digraph DependecyMap { rankdir=LR;
 			
 			"SIMM:EquitySecurity(1.0.0)"
 			[shape=record,
+				tooltip="SIMM:EquitySecurity(1.0.0)",
 				URL="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurity/1.0.0",
 				target=_blank,
 				label="
@@ -53,6 +54,7 @@ digraph DependecyMap { rankdir=LR;
 			
 			"SIMM:EquitySecurityPosition(1.0.0)"
 			[shape=record,
+				tooltip="SIMM:EquitySecurityPosition(1.0.0)",
 				URL="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurityPosition/1.0.0",
 				target=_blank,
 				label="

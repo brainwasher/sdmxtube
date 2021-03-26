@@ -32,6 +32,7 @@
 			<!-- DSD-Agency:Name(Version) -->
 			"<xsl:value-of select="@agencyID" />:<xsl:value-of select="@id" />(<xsl:value-of select="@version" />)"
 			[shape=record,
+				tooltip="<xsl:value-of select="@agencyID" />:<xsl:value-of select="@id" />(<xsl:value-of select="@version" />)",
 				URL="<xsl:value-of select="$registryRestUrl"/>/datastructure/<xsl:value-of select="@agencyID" />/<xsl:value-of select="@id" />/<xsl:value-of select="@version" />",
 				target=_blank,
 				label="
