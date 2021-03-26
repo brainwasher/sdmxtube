@@ -1,2 +1,2 @@
 # XSLT Library
-* **tokenize**: split a string by character
+* **debug**: templates that can be used for debugging purposes
