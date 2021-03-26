@@ -9,7 +9,6 @@ digraph DependecyMap { rankdir=LR;
 				label="
 					{SIMM|EquitySecurity|1.0.0}
 					
-
 		|{
 			<ESI> 
 			Dim - 
@@ -22,7 +21,6 @@ digraph DependecyMap { rankdir=LR;
         
 		}
 	
-
 		|{
 			<CUR> 
 			Att - 
@@ -37,7 +35,6 @@ digraph DependecyMap { rankdir=LR;
         
 		}
 	
-
 		|{
 			<LFMD> 
 			Att - 
@@ -61,7 +58,6 @@ digraph DependecyMap { rankdir=LR;
 				label="
 					{SIMM|EquitySecurityPosition|1.0.0}
 					
-
 		|{
 			<IPI> 
 			Dim - 
@@ -74,7 +70,6 @@ digraph DependecyMap { rankdir=LR;
         
 		}
 	
-
 		|{
 			<ESI> 
 			Dim - 
@@ -87,7 +82,6 @@ digraph DependecyMap { rankdir=LR;
         
 		}
 	
-
 		|{
 			<NOS> 
 			Att - 
