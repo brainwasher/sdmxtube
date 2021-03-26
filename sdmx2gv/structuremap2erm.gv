@@ -1,6 +1,7 @@
 digraph DependecyMap { rankdir=LR;
   
   
+			
 			"SIMM:EquitySecurity(1.0.0)"
 			[shape=record,
 				URL="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurity/1.0.0",
@@ -8,21 +9,45 @@ digraph DependecyMap { rankdir=LR;
 				label="
 					{SIMM|EquitySecurity|1.0.0}
 					 
-						|{<ESI> 
-						Dim - SIMM.REF.CS_REFERENCE:ESI
-						
-						\n
+						|{
+							<ESI> 
+							Dim - SIMM.REF.CS_REFERENCE:ESI
+							\n
+          Equity security identifier
+          
+            
+          
+        
 						}
 					
-						|{<CUR> 
-						Att - SIMM.REF.CS_REFERENCE:CUR}
+						|{
+							<CUR> 
+							Att - SIMM.REF.CS_REFERENCE:CUR
+							\n
+          Currency
+          
+            
+              
+            
+          
+        
+						}
 					
-						|{<LFMD> 
-						Att - SIMM.REF.CS_REFERENCE:LFMD}
+						|{
+							<LFMD> 
+							Att - SIMM.REF.CS_REFERENCE:LFMD
+							\n
+          Legal final maturity date
+          
+            
+          
+        
+						}
 					
 				",
 			];
 		
+			
 			"SIMM:EquitySecurityPosition(1.0.0)"
 			[shape=record,
 				URL="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurityPosition/1.0.0",
@@ -30,24 +55,45 @@ digraph DependecyMap { rankdir=LR;
 				label="
 					{SIMM|EquitySecurityPosition|1.0.0}
 					 
-						|{<IPI> 
-						Dim - SIMM.REF.CS_REFERENCE:IPI
-						
-						\n
+						|{
+							<IPI> 
+							Dim - SIMM.REF.CS_REFERENCE:IPI
+							\n
+          Investor Party identifier
+          
+            
+          
+        
 						}
 					 
-						|{<ESI> 
-						Dim - SIMM.REF.CS_REFERENCE:ESI
-						
-						\n
+						|{
+							<ESI> 
+							Dim - SIMM.REF.CS_REFERENCE:ESI
+							\n
+          Equity security identifier
+          
+            
+          
+        
 						}
 					
-						|{<NOS> 
-						Att - SIMM.REF.CS_REFERENCE:NOS}
+						|{
+							<NOS> 
+							Att - SIMM.REF.CS_REFERENCE:NOS
+							\n
+          Number of shares
+          
+            
+          
+        
+						}
 					
 				",
 			];
 		
 			"SIMM:EquitySecurityPosition(1.0.0)":ESI
 			->
-			"SIMM:EquitySecurity(1.0.0)":ESI}
+			"SIMM:EquitySecurity(1.0.0)":ESI
+			
+			[dir="both" arrowhead="crowodot", arrowtail="teetee"]
+		}
