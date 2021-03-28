@@ -18,6 +18,8 @@ Write-Output "..."
         else { "dot" }
 <# /global #>
 
+Write-Verbose ""
+Write-Verbose ""
 Write-Verbose "Detected OS: $osString"
 
 <# verbose OS choice for DOT executable #>
