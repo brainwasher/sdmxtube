@@ -9,11 +9,11 @@ echo "GV done."
 echo ""
 
 IF($IsWindows) {
-    echo "Using Windows: local portable graphviz supported."
+    echo "Running on Windows: local portable graphviz used..."
     & $PSScriptRoot/../bin-win/graphviz/dot.exe -Tsvg $PSScriptRoot/structuremap2erm.gv -O
     & $PSScriptRoot/../bin-win/graphviz/dot.exe -Tpng $PSScriptRoot/structuremap2erm.gv -O
 } ELSEIF($IsLinux) {
-    echo "Using Linux: graphviz needs to be installed."
+    echo "Running on Linux: trying installed graphviz package..."
     try {
         & dot -Tsvg $PSScriptRoot/structuremap2erm.gv -O
         & dot -Tpng $PSScriptRoot/structuremap2erm.gv -O            
