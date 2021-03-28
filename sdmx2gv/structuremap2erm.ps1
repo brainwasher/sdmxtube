@@ -6,16 +6,21 @@ java -jar $PSScriptRoot/../bin-java/SaxonHE/saxon-he-10.3.jar -s:$PSScriptRoot/S
 
 echo ""
 echo "GV done."
+echo ""
 
-& $PSScriptRoot/../bin-win/graphviz/dot.exe -Tsvg $PSScriptRoot/structuremap2erm.gv -O
+IF($IsWindows) {
+    echo "Using Windows: local portable graphviz supported."
+    & $PSScriptRoot/../bin-win/graphviz/dot.exe -Tsvg $PSScriptRoot/structuremap2erm.gv -O
+    & $PSScriptRoot/../bin-win/graphviz/dot.exe -Tpng $PSScriptRoot/structuremap2erm.gv -O
+} ELSEIF($IsLinux) {
+    echo "Using Linux: graphviz needs to be installed."
+    echo "In case the conversion fails, install graphviz depending on your distro: "
+    echo "   Debian: sudo apt-get install graphviz"
+    & dot 
+}
 
 echo ""
-echo "SVG done."
-
-& $PSScriptRoot/../bin-win/graphviz/dot.exe -Tpng $PSScriptRoot/structuremap2erm.gv -O
-
-echo ""
-echo "PNG done."
+echo "Conversion done."
 
 echo ""
 echo ""
