@@ -9,7 +9,7 @@
             "name": "PowerShell: Launch Script",
             "type": "PowerShell",
             "request": "launch",
-            "script": "${workspaceFolder}/sdmx2gv/structuremap2erm.ps1",
+            "script": "${workspaceFolder}/sdmx2gv/run.ps1",
             "cwd": "${workspaceFolder}"
         }
     ]
