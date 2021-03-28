@@ -10,7 +10,8 @@
             "type": "PowerShell",
             "request": "launch",
             "script": "${workspaceFolder}/sdmx2gv/runConversion.ps1",
-            "cwd": "${workspaceFolder}"
+            "cwd": "${workspaceFolder}",
+            "args": ["-Verbose", "-Debug"]
         }
     ]
 }
