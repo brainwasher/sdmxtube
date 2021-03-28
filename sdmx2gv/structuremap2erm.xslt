@@ -56,7 +56,6 @@
 			"<xsl:value-of select="./str:Target/Ref/@agencyID" />:<xsl:value-of select="./str:Target/Ref/@id" />(<xsl:value-of select="./str:Target/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap/str:Target/Ref/@id" />
 			->
 			"<xsl:value-of select="./str:Source/Ref/@agencyID" />:<xsl:value-of select="./str:Source/Ref/@id" />(<xsl:value-of select="./str:Source/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap/str:Source/Ref/@id" />
-			<!-- arrowstyles: https://www.graphviz.org/doc/info/arrows.html -->
 			<xsl:text> [dir="both" </xsl:text>
 			<xsl:for-each select="./com:Annotations/com:Annotation">
 				<!-- TODO: add generalisation arrowhead and arrowtail -->
@@ -94,6 +93,7 @@
 	</xsl:template>
 
 	<!-- template for the arrowhead of cardinality annotations -->
+	<!-- arrowstyles: https://www.graphviz.org/doc/info/arrows.html -->
 	<xsl:template name="cardinalityArrow">
 		<xsl:param name="AnnotationTitle" />
 		<xsl:choose>
