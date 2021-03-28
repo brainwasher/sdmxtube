@@ -6,8 +6,8 @@
 >
 	<xsl:output method="text" media-type="text/vnd.graphviz"/>
 
-	<!-- as the base REST URL of the registry here. That will add the REST links to the artefacts in the graph (not supported in PNG, use SVG) -->
-	<xsl:variable name="registryRestUrl">https://registry.sdmx.org/ws/public/sdmxapi/rest</xsl:variable>
+	<!-- as the base REST URL of the registry here with trailing /. That will add the REST links to the artefacts in the graph (not supported in PNG, use SVG) -->
+	<xsl:variable name="registryRestUrl">http://localhost:8080/FusionRegistry-10.3.5/ws/public/sdmxapi/rest/</xsl:variable>
 
 	<!--
 		the key stores the concepts by @id in order to look them up later.
@@ -33,7 +33,7 @@
 			"<xsl:value-of select="@agencyID" />:<xsl:value-of select="@id" />(<xsl:value-of select="@version" />)"
 			[shape=record,
 				tooltip="<xsl:value-of select="@agencyID" />:<xsl:value-of select="@id" />(<xsl:value-of select="@version" />)",
-				URL="<xsl:value-of select="$registryRestUrl"/>/datastructure/<xsl:value-of select="@agencyID" />/<xsl:value-of select="@id" />/<xsl:value-of select="@version" />",
+				URL="<xsl:value-of select="$registryRestUrl"/>datastructure/<xsl:value-of select="@agencyID" />/<xsl:value-of select="@id" />/<xsl:value-of select="@version" />",
 				target=_blank,
 				label="
 					{<xsl:value-of select="@agencyID" />|<xsl:value-of select="@id" />|<xsl:value-of select="@version" />}
@@ -53,12 +53,31 @@
 
 		<!-- loop through structure maps for creating connectors -->
 		<xsl:for-each select=".//str:StructureMap">
-			"<xsl:value-of select="./str:Target/Ref/@agencyID" />:<xsl:value-of select="./str:Target/Ref/@id" />(<xsl:value-of select="./str:Target/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap/str:Source/Ref/@id" />
+			"<xsl:value-of select="./str:Target/Ref/@agencyID" />:<xsl:value-of select="./str:Target/Ref/@id" />(<xsl:value-of select="./str:Target/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap/str:Target/Ref/@id" />
 			->
 			"<xsl:value-of select="./str:Source/Ref/@agencyID" />:<xsl:value-of select="./str:Source/Ref/@id" />(<xsl:value-of select="./str:Source/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap/str:Source/Ref/@id" />
-			<!-- TODO: the below is only an example, it still needs to be replaced with the real symbols depending on the annotations -->
 			<!-- arrowstyles: https://www.graphviz.org/doc/info/arrows.html -->
-			[dir="both" arrowhead="crowodot", arrowtail="teetee"]
+			<xsl:text> [dir="both" </xsl:text>
+			<xsl:for-each select="./com:Annotations/com:Annotation">
+				<!-- TODO: add generalisation arrowhead and arrowtail -->
+				<xsl:choose>
+					<xsl:when test="./com:AnnotationType='CARDINALITY_SOURCE2TARGET'">
+						<xsl:text> arrowtail="</xsl:text>
+					</xsl:when>
+					<xsl:when test="./com:AnnotationType='CARDINALITY_TARGET2SOURCE'">
+						<xsl:text> arrowhead="</xsl:text>
+					</xsl:when>					
+				</xsl:choose>
+				<xsl:choose>
+					<xsl:when test="./com:AnnotationType='CARDINALITY_SOURCE2TARGET' or ./com:AnnotationType='CARDINALITY_TARGET2SOURCE'">
+						<xsl:call-template name="cardinalityArrow">
+							<xsl:with-param name="AnnotationTitle" select="./com:AnnotationTitle"/>
+						</xsl:call-template>
+					</xsl:when>			
+				</xsl:choose>
+				<xsl:text>" </xsl:text>
+			</xsl:for-each>
+			<xsl:text>] </xsl:text>
 		</xsl:for-each>
 	</xsl:template>
 
@@ -72,6 +91,33 @@
 			<xsl:value-of select="$conceptNode/str:ConceptIdentity/Ref/@agencyID" />.<xsl:value-of select="$conceptNode/str:ConceptIdentity/Ref/@maintainableParentID" />:<xsl:value-of select="$conceptNode/@id" />
 			\n<xsl:value-of select="key('concept',$conceptNode/str:ConceptIdentity/Ref/@id)" />
 		}
+	</xsl:template>
+
+	<!-- template for the arrowhead of cardinality annotations -->
+	<xsl:template name="cardinalityArrow">
+		<xsl:param name="AnnotationTitle" />
+		<xsl:choose>
+			<xsl:when test="substring($AnnotationTitle,4,1)='N'">
+				<xsl:text>crow</xsl:text>
+			</xsl:when>
+			<xsl:when test="substring($AnnotationTitle,4,1)='1'">
+				<xsl:text>tee</xsl:text>
+			</xsl:when>			
+			<xsl:when test="substring($AnnotationTitle,4,1)='0'">
+				<xsl:text>odot</xsl:text>
+			</xsl:when>
+		</xsl:choose>
+		<xsl:choose>
+			<xsl:when test="substring($AnnotationTitle,1,1)='N'">
+				<xsl:text>crow</xsl:text>
+			</xsl:when>
+			<xsl:when test="substring($AnnotationTitle,1,1)='1'">
+				<xsl:text>tee</xsl:text>
+			</xsl:when>			
+			<xsl:when test="substring($AnnotationTitle,1,1)='0'">
+				<xsl:text>odot</xsl:text>
+			</xsl:when>			
+		</xsl:choose>
 	</xsl:template>
 
 </xsl:stylesheet>
