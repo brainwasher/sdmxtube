@@ -37,6 +37,7 @@
 				target=_blank,
 				label="
 					{<xsl:value-of select="@agencyID" />|<xsl:value-of select="@id" />|<xsl:value-of select="@version" />}
+					<!-- TODO: add DSD description -->
 					<xsl:for-each select=".//str:DimensionList/str:Dimension"> 
 						<xsl:call-template name="conceptLabel">
 							<xsl:with-param name="conceptNode" select="."/>
@@ -53,9 +54,9 @@
 
 		<!-- loop through structure maps for creating connectors -->
 		<xsl:for-each select=".//str:StructureMap">
-			"<xsl:value-of select="./str:Target/Ref/@agencyID" />:<xsl:value-of select="./str:Target/Ref/@id" />(<xsl:value-of select="./str:Target/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap/str:Target/Ref/@id" />
+			"<xsl:value-of select="./str:Target/Ref/@agencyID" />:<xsl:value-of select="./str:Target/Ref/@id" />(<xsl:value-of select="./str:Target/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Target/Ref/@id" />
 			->
-			"<xsl:value-of select="./str:Source/Ref/@agencyID" />:<xsl:value-of select="./str:Source/Ref/@id" />(<xsl:value-of select="./str:Source/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap/str:Source/Ref/@id" />
+			"<xsl:value-of select="./str:Source/Ref/@agencyID" />:<xsl:value-of select="./str:Source/Ref/@id" />(<xsl:value-of select="./str:Source/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Source/Ref/@id" />
 			<xsl:text> [dir="both" </xsl:text>
 			<xsl:for-each select="./com:Annotations/com:Annotation">
 				<!-- TODO: add generalisation arrowhead and arrowtail -->
@@ -89,6 +90,7 @@
 			<xsl:value-of select="substring(local-name($conceptNode),1,3)" /> - 
 			<xsl:value-of select="$conceptNode/str:ConceptIdentity/Ref/@agencyID" />.<xsl:value-of select="$conceptNode/str:ConceptIdentity/Ref/@maintainableParentID" />:<xsl:value-of select="$conceptNode/@id" />
 			\n<xsl:value-of select="key('concept',$conceptNode/str:ConceptIdentity/Ref/@id)" />
+			<!-- TODO: add data type / code list reference -->
 		}
 	</xsl:template>
 
