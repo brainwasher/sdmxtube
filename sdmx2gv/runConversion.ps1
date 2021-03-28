@@ -6,10 +6,12 @@ Write-Output "..."
 
 <# global variables #>
     <# operating system output info #>
-    $osString = (Get-CimInstance -ClassName CIM_OperatingSystem).Caption +
-        " ("+(Get-CimInstance -ClassName CIM_OperatingSystem).Version+" " +
-        (Get-CimInstance -ClassName CIM_OperatingSystem).OSArchitecture+")" +
-        " on "+(Get-CimInstance -ClassName CIM_OperatingSystem).CSName
+    $osString =
+        if($IsWindows) { (Get-CimInstance -ClassName CIM_OperatingSystem).Caption +
+            " ("+(Get-CimInstance -ClassName CIM_OperatingSystem).Version+" " +
+            (Get-CimInstance -ClassName CIM_OperatingSystem).OSArchitecture+")" +
+            " on "+(Get-CimInstance -ClassName CIM_OperatingSystem).CSName
+        } else { Invoke-Expression "uname -a" }
     <# command pipe added to a invokation (sending to nul in case verbose is off) #>
     $global:commandPipe = if($VerbosePreference -eq "SilentlyContinue") { " > nul" } else { "" }
     <# executable for graphviz: for Windows, use local portable version, for others assume installed version in path #>
