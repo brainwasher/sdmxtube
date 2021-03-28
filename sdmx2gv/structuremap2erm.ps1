@@ -1,5 +1,7 @@
 echo "..."
 
+<# TODO: get structure file as CL parameter #>
+<# TODO: get structure from REST web service as alternative (CL parameter with URL)#>
 java -jar $PSScriptRoot/../bin-java/SaxonHE/saxon-he-10.3.jar -s:$PSScriptRoot/StructureMap.xml -xsl:$PSScriptRoot/structuremap2erm.xslt -o:$PSScriptRoot/structuremap2erm.gv
 
 echo ""

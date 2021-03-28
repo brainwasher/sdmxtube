@@ -1,11 +1,9 @@
 digraph DependecyMap { rankdir=LR;
-  
-  
 			
 			"SIMM:EquitySecurity(1.0.0)"
 			[shape=record,
 				tooltip="SIMM:EquitySecurity(1.0.0)",
-				URL="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurity/1.0.0",
+				URL="http://localhost:8080/FusionRegistry-10.3.5/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurity/1.0.0",
 				target=_blank,
 				label="
 					{SIMM|EquitySecurity|1.0.0}
@@ -14,38 +12,21 @@ digraph DependecyMap { rankdir=LR;
 			<ESI> 
 			Dim - 
 			SIMM.REF.CS_REFERENCE:ESI
-			\n
-          Equity security identifier
-          
-            
-          
-        
+			\nEquity security identifier
 		}
 	
 		|{
 			<CUR> 
 			Att - 
 			SIMM.REF.CS_REFERENCE:CUR
-			\n
-          Currency
-          
-            
-              
-            
-          
-        
+			\nCurrency
 		}
 	
 		|{
 			<LFMD> 
 			Att - 
 			SIMM.REF.CS_REFERENCE:LFMD
-			\n
-          Legal final maturity date
-          
-            
-          
-        
+			\nLegal final maturity date
 		}
 	
 				",
@@ -55,7 +36,7 @@ digraph DependecyMap { rankdir=LR;
 			"SIMM:EquitySecurityPosition(1.0.0)"
 			[shape=record,
 				tooltip="SIMM:EquitySecurityPosition(1.0.0)",
-				URL="https://registry.sdmx.org/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurityPosition/1.0.0",
+				URL="http://localhost:8080/FusionRegistry-10.3.5/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurityPosition/1.0.0",
 				target=_blank,
 				label="
 					{SIMM|EquitySecurityPosition|1.0.0}
@@ -64,36 +45,40 @@ digraph DependecyMap { rankdir=LR;
 			<IPI> 
 			Dim - 
 			SIMM.REF.CS_REFERENCE:IPI
-			\n
-          Investor Party identifier
-          
-            
-          
-        
+			\nInvestor Party identifier
 		}
 	
 		|{
 			<ESI> 
 			Dim - 
 			SIMM.REF.CS_REFERENCE:ESI
-			\n
-          Equity security identifier
-          
-            
-          
-        
+			\nEquity security identifier
 		}
 	
 		|{
 			<NOS> 
 			Att - 
 			SIMM.REF.CS_REFERENCE:NOS
-			\n
-          Number of shares
-          
-            
-          
-        
+			\nNumber of shares
+		}
+	
+				",
+			];
+		
+			
+			"SIMM:Party(1.0.0)"
+			[shape=record,
+				tooltip="SIMM:Party(1.0.0)",
+				URL="http://localhost:8080/FusionRegistry-10.3.5/ws/public/sdmxapi/rest/datastructure/SIMM/Party/1.0.0",
+				target=_blank,
+				label="
+					{SIMM|Party|1.0.0}
+					
+		|{
+			<PI> 
+			Dim - 
+			SIMM.REF.CS_REFERENCE:PI
+			\nParty identifier
 		}
 	
 				",
@@ -101,8 +86,7 @@ digraph DependecyMap { rankdir=LR;
 		
 			"SIMM:EquitySecurityPosition(1.0.0)":ESI
 			->
-			"SIMM:EquitySecurity(1.0.0)":ESI
-			
-			
-			[dir="both" arrowhead="crowodot", arrowtail="teetee"]
-		}
+			"SIMM:EquitySecurity(1.0.0)":ESI [dir="both"  arrowtail="crowodot"  arrowhead="teetee" ] 
+			"SIMM:EquitySecurityPosition(1.0.0)":IPI
+			->
+			"SIMM:Party(1.0.0)":PI [dir="both"  arrowtail="crowodot"  arrowhead="teetee" ] }
