@@ -12,8 +12,6 @@ Write-Output "..."
             (Get-CimInstance -ClassName CIM_OperatingSystem).OSArchitecture+")" +
             " on "+(Get-CimInstance -ClassName CIM_OperatingSystem).CSName
         } else { Invoke-Expression "uname -a" }
-    <# command pipe added to a invokation (sending to nul in case verbose is off) #>
-    $global:commandPipe = if($VerbosePreference -eq "SilentlyContinue") { " > nul" } else { "" }
     <# executable for graphviz: for Windows, use local portable version, for others assume installed version in path #>
     $global:graphvizExe = 
         if($IsWindows) { "$PSScriptRoot/../bin-win/graphviz/dot.exe" }
@@ -28,8 +26,16 @@ ELSE { Write-Verbose "Running on non-Windows OS: trying installed graphviz packa
 
 <# testing prerequists #>
 try {
-    Write-Verbose "Testing DOT: $global:graphvizExe -V $global:commandPipe"
-    Invoke-Expression "$global:graphvizExe -V $global:commandPipe" <# show dot version #>
+    Write-Verbose "Testing DOT: $global:graphvizExe -V"
+    <# TODO: silence output in non-verbose mode this Out-Null below did not work #>
+    <# 
+    if($VerbosePreference -eq "SilentlyContinue") { 
+        Invoke-Expression "$global:graphvizExe -V" | Out-Null        
+    } else { 
+        Invoke-Expression "$global:graphvizExe -V"
+    }
+    #>
+    Invoke-Expression "$global:graphvizExe -V" <# this is currently not silent #>
 } catch {
     Write-Output "For some reason graphviz failed, is graphviz installed?"
     Write-Output "On Linux, install graphviz depending on your distro: "
