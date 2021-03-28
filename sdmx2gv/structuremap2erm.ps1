@@ -14,9 +14,16 @@ IF($IsWindows) {
     & $PSScriptRoot/../bin-win/graphviz/dot.exe -Tpng $PSScriptRoot/structuremap2erm.gv -O
 } ELSEIF($IsLinux) {
     echo "Using Linux: graphviz needs to be installed."
-    echo "In case the conversion fails, install graphviz depending on your distro: "
-    echo "   Debian: sudo apt-get install graphviz"
-    & dot 
+    try {
+        & dot -Tsvg $PSScriptRoot/structuremap2erm.gv -O
+        & dot -Tpng $PSScriptRoot/structuremap2erm.gv -O            
+    }
+    catch {
+        echo "Conversion failed, is graphviz installed? Install graphviz depending on your distro: "
+        echo "   Debian: sudo apt-get install graphviz"
+        echo ""
+        throw "script terminated. astalavista baby."
+    }
 }
 
 echo ""
