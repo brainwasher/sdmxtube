@@ -17,10 +17,17 @@
 		TODO: in case concepts from different concept schemes have the same @id, this creates wrong output (@id is not unique across concept schemes)
 	-->
 	<xsl:key name="concept" match="str:ConceptScheme//str:Concept" use="@id" />
+	<!-- 
+		TODO: do we need them for clusters?
+		the key stores the structuremaps by @id
+	-->
+	<!-- <xsl:key name="categorisation" match="//str:Categorisation/str:Source/Ref[@class='StructureSet']" use="@id" /> -->
 
 	<xsl:template match="/">
 		<!-- draw directed graph from left to right (LR) -->
-		<xsl:text>digraph DependecyMap { rankdir=LR;</xsl:text>
+		<xsl:text>digraph DependecyMap { rankdir=LR; label="\n\n\nEntity Relationship Model\n\ngenerated </xsl:text>
+		<xsl:value-of select="current-dateTime()" />
+		<xsl:text>"; </xsl:text>
 		<xsl:apply-templates />
 		<xsl:text>}</xsl:text>
 	</xsl:template>
@@ -69,6 +76,22 @@
 				",
 			];
 		</xsl:for-each>
+		
+		<!-- TODO: scan category schemes for creating subgraph clusters -->
+		<!-- look for "cluster" https://graphviz.org/Gallery/directed/cluster.html -->
+		<!-- subgraph cluster_0 { label="Entity Relationship Model" } -->
+		<!-- categorisations that contain a StructureSet -->
+		<!-- currently only debug info -->
+		<!--
+		<xsl:for-each select=".//str:Categorisation/str:Source/Ref[@class='StructureSet']">
+				<xsl:text>
+				// Categorisation </xsl:text>
+				<xsl:call-template name="artefactIdentifier"><xsl:with-param name="artefactNode" select="../.."/></xsl:call-template>
+				<xsl:text>
+				// for StructureSet </xsl:text>	
+				<xsl:call-template name="artefactIdentifier"><xsl:with-param name="artefactNode" select="../.."/></xsl:call-template>	
+		</xsl:for-each>
+		-->
 
 		<!-- loop through structure maps for creating connectors -->
 		<xsl:for-each select=".//str:StructureMap">

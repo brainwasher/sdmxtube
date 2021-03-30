@@ -14,6 +14,9 @@ SDMX-related tools, scripts and ideas. Why? Because I can...
 * **sandbox**: as the name suggests, that branch is to play aaround with stuff. Things here might or might not make sense. Don't ask, just play
 * **dev-\***: those branches are dev branches for a specific project (e.g. dev-sdmx2gv for developing stuff for the sdmx2gv project)
 
+## Portable executables for Windows used
+* **graphviz**: 2.47.0 ZIP archive for Windows 10 (32-bit) taken from https://graphviz.org/download/
+
 ## further reading
 * **Clickable SDMX**: check out the clickable SDMX page to dive into the SDMX IM and make sure that you are literate in UML before you do so... (https://statswiki.unece.org/display/ClickSDMX/Clickable+SDMX+Home)
 * **PowerShell**: PowerShell 7 suppports Windows and Linux. Thus, scripts are written in PowerShell and not in bash or cmd. Deal with it. Install PowerShell: (https://aka.ms/powershell) 

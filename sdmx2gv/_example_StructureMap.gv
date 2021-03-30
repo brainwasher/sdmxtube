@@ -1,0 +1,266 @@
+digraph DependecyMap { rankdir=LR; label="\n\n\nEntity Relationship Model\n\ngenerated 2021-03-31T00:11:59.428+02:00"; 
+  
+  "SIMM:EquitySecurity(1.0.0)"
+			
+			[shape=Mrecord,
+				tooltip="Equity Security"
+				,
+				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurity/1.0.0",
+				target=_blank,
+				label=" 
+
+					
+					{SIMM|EquitySecurity|1.0.0}
+
+					
+					
+		|{
+			<ESI> 
+			Dim - 
+			SIMM.REF:CS_REFERENCE(1.0.0).ESI
+			\nEquity security identifier [String]
+		}
+	
+		|{
+			<CUR> 
+			Att - 
+			SIMM.REF:CS_REFERENCE(1.0.0).CUR
+			\nCurrency\n[🧾SIMM.REF:CL_CUR(1.0.0)]
+		}
+	
+		|{
+			<LFMD> 
+			Att - 
+			SIMM.REF:CS_REFERENCE(1.0.0).LFMD
+			\nLegal final maturity date [GregorianDay]
+		}
+	
+
+					
+				",
+			];
+		"SIMM:EquitySecurityPosition(1.0.0)"
+			
+			[shape=Mrecord,
+				tooltip="Equity security position"
+				,
+				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurityPosition/1.0.0",
+				target=_blank,
+				label=" 
+
+					
+					{SIMM|EquitySecurityPosition|1.0.0}
+
+					
+					
+		|{
+			<IPI> 
+			Dim - 
+			SIMM.REF:CS_REFERENCE(1.0.0).IPI
+			\nInvestor Party identifier [String]
+		}
+	
+		|{
+			<ESI> 
+			Dim - 
+			SIMM.REF:CS_REFERENCE(1.0.0).ESI
+			\nEquity security identifier [String]
+		}
+	
+		|{
+			<NOS> 
+			Att - 
+			SIMM.REF:CS_REFERENCE(1.0.0).NOS
+			\nNumber of shares [Integer]
+		}
+	
+
+					
+				",
+			];
+		"SIMM:FinancialAsset(1.0.0)"
+			
+			[shape=Mrecord,
+				tooltip="Financial asset\n\nA financial asset is an Asset according to the used Accounting standard that is considered a Financial instrument according to IAS 32"
+				,
+				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/FinancialAsset/1.0.0",
+				target=_blank,
+				label=" 
+
+					
+					{SIMM|FinancialAsset|1.0.0}
+
+					
+					
+		|{
+			<ID> 
+			Dim - 
+			SIMM.REF:CS_REFERENCE(1.0.0).ID
+			\nID of an abstract entity [Integer]
+		}
+	
+		|{
+			<CA> 
+			Att - 
+			SIMM.REF:CS_REFERENCE(1.0.0).CA
+			\nCarrying amount [Integer]
+		}
+	
+
+					
+				",
+			];
+		"SIMM:FinancialAsset_ESP(1.0.0)"
+			
+			[shape=Mrecord,
+				tooltip="Financial asset in the form of an Equity security position"
+				,
+				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/FinancialAsset_ESP/1.0.0",
+				target=_blank,
+				label=" 
+
+					
+					{SIMM|FinancialAsset_ESP|1.0.0}
+
+					
+					
+		|{
+			<AC> 
+			Dim - 
+			SIMM.REF:CS_REFERENCE(1.0.0).AC
+			\nAccounting classification\n[🧾SIMM.REF:CL_AC(1.0.0)]
+		}
+	
+		|{
+			<IPI> 
+			Dim - 
+			SIMM.REF:CS_REFERENCE(1.0.0).IPI
+			\nInvestor Party identifier [String]
+		}
+	
+		|{
+			<ESI> 
+			Dim - 
+			SIMM.REF:CS_REFERENCE(1.0.0).ESI
+			\nEquity security identifier [String]
+		}
+	
+
+					
+				",
+			];
+		"SIMM:FinancialAsset_Inst(1.0.0)"
+			
+			[shape=Mrecord,
+				tooltip="Financial asset in the form of an instrument"
+				,
+				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/FinancialAsset_Inst/1.0.0",
+				target=_blank,
+				label=" 
+
+					
+					{SIMM|FinancialAsset_Inst|1.0.0}
+
+					
+					
+		|{
+			<II> 
+			Dim - 
+			SIMM.REF:CS_REFERENCE(1.0.0).II
+			\nInstrument identifier [String]
+		}
+	
+		|{
+			<AI> 
+			Att - 
+			SIMM.REF:CS_REFERENCE(1.0.0).AI
+			\nAccumulated impairment [Integer]
+		}
+	
+
+					
+				",
+			];
+		"SIMM:Instrument(1.0.0)"
+			
+			[shape=Mrecord,
+				tooltip="Instrument"
+				,
+				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/Instrument/1.0.0",
+				target=_blank,
+				label=" 
+
+					
+					{SIMM|Instrument|1.0.0}
+
+					
+					
+		|{
+			<II> 
+			Dim - 
+			SIMM.REF:CS_REFERENCE(1.0.0).II
+			\nInstrument identifier [String]
+		}
+	
+		|{
+			<ONA> 
+			Att - 
+			SIMM.REF:CS_REFERENCE(1.0.0).ONA
+			\nOutstanding nominal amount [Integer]
+		}
+	
+		|{
+			<CUR> 
+			Att - 
+			SIMM.REF:CS_REFERENCE(1.0.0).CUR
+			\nCurrency\n[🧾SIMM.REF:CL_CUR(1.0.0)]
+		}
+	
+
+					
+				",
+			];
+		"SIMM:Party(1.0.0)"
+			
+			[shape=Mrecord,
+				tooltip="Party"
+				,
+				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/Party/1.0.0",
+				target=_blank,
+				label=" 
+
+					
+					{SIMM|Party|1.0.0}
+
+					
+					
+		|{
+			<PI> 
+			Dim - 
+			SIMM.REF:CS_REFERENCE(1.0.0).PI
+			\nParty identifier [String]
+		}
+	
+
+					
+				",
+			];
+		
+			"SIMM:EquitySecurityPosition(1.0.0)":ESI
+			->  
+			"SIMM:EquitySecurity(1.0.0)":ESI [ dir="both" arrowtail="crowodot"  arrowhead="teetee" ] 
+			"SIMM:EquitySecurityPosition(1.0.0)":IPI
+			->  
+			"SIMM:Party(1.0.0)":PI [ dir="both" arrowtail="crowodot"  arrowhead="teetee" ] 
+			"SIMM:FinancialAsset_ESP(1.0.0)":ESI
+			->  
+			"SIMM:EquitySecurityPosition(1.0.0)":ESI [ arrowhead="teetee"  dir="both" arrowtail="crowodot" ] 
+			"SIMM:FinancialAsset_ESP(1.0.0)":AC
+			->  
+			"SIMM:FinancialAsset(1.0.0)":ID [ arrowhead="onormal" ] 
+			"SIMM:FinancialAsset_Inst(1.0.0)":II
+			->  
+			"SIMM:FinancialAsset(1.0.0)":ID [ arrowhead="onormal" ] 
+			"SIMM:FinancialAsset_Inst(1.0.0)":II
+			->  
+			"SIMM:Instrument(1.0.0)":II [ arrowhead="teetee"  dir="both" arrowtail="teeodot" ] }
