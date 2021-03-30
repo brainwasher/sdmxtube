@@ -1,3 +1,4 @@
+#Requires -Version 7
 <# enable support for verbose mode #>
 [CmdletBinding(SupportsShouldProcess=$true)]
 Param()
@@ -29,6 +30,7 @@ ELSE { Write-Verbose "Running on non-Windows OS: trying installed graphviz packa
 <# testing prerequists #>
 try {
     Write-Verbose "Testing DOT: $global:graphvizExe -V"
+    Invoke-Expression "$global:graphvizExe -V" <# this is currently not silent #>
     <# TODO: silence output in non-verbose mode this Out-Null below did not work #>
     <# 
     if($VerbosePreference -eq "SilentlyContinue") { 
@@ -37,7 +39,6 @@ try {
         Invoke-Expression "$global:graphvizExe -V"
     }
     #>
-    Invoke-Expression "$global:graphvizExe -V" <# this is currently not silent #>
 } catch {
     Write-Output "For some reason graphviz failed, is graphviz installed?"
     Write-Output "On Linux, install graphviz depending on your distro: "
@@ -51,7 +52,7 @@ try {
 
 <# TODO: get structure file as CL parameter #>
 <# TODO: get structure from REST web service as alternative (CL parameter with URL)#>
-<# sample URL: http://localhost:8080/FusionRegistry-10.3.5/ws/public/sdmxapi/rest/structureset/SIMM/SS_SP01/latest/?format=sdmx-2.1&detail=full&references=all&prettyPrint=true #>
+<# sample URL: http://localhost:8080/ws/public/sdmxapi/rest/categorisation/SIMM/all/latest/?format=sdmx-2.1&detail=full&references=all&prettyPrint=true #>
 
 java -jar $PSScriptRoot/../bin-java/SaxonHE/saxon-he-10.3.jar -s:$PSScriptRoot/StructureMap.xml -xsl:$PSScriptRoot/structuremap2erm.xslt -o:$PSScriptRoot/StructureMap.gv
 

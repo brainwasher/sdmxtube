@@ -5,13 +5,16 @@
 	xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
 >
 	<xsl:output method="text" media-type="text/vnd.graphviz"/>
+	<xsl:include href="../lib/xslt/libsdmx.xslt"/><!-- SDMX library -->
 
-	<!-- as the base REST URL of the registry here with trailing /. That will add the REST links to the artefacts in the graph (not supported in PNG, use SVG) -->
-	<xsl:variable name="registryRestUrl">http://localhost:8080/FusionRegistry-10.3.5/ws/public/sdmxapi/rest/</xsl:variable>
+	<!-- as the base REST URL of the registry here with trailing /.  -->
+	<!-- That will add the REST links to the artefacts in the graph (e.g. SVG output) -->
+	<!-- the default value points to the standard Docker image config of Fusion Metadata Registry -->
+	<xsl:param name="registryRestEndpoint" select="'http://localhost:8080/ws/public/sdmxapi/rest/'" />
 
 	<!--
 		the key stores the concepts by @id in order to look them up later.
-		FIXME: in case concepts from different concept schemes have the same @id, this creates wrong output (@id is not unique across concept schemes)
+		TODO: in case concepts from different concept schemes have the same @id, this creates wrong output (@id is not unique across concept schemes)
 	-->
 	<xsl:key name="concept" match="str:ConceptScheme//str:Concept" use="@id" />
 
@@ -27,27 +30,42 @@
 
 	<!-- scan structures -->
 	<xsl:template match="mes:Structures">
-		<!-- loop through DSDs -->
+
+		<!-- loop through DSDs to create entities -->
 		<xsl:for-each select=".//str:DataStructure">
-			<!-- DSD-Agency:Name(Version) -->
-			"<xsl:value-of select="@agencyID" />:<xsl:value-of select="@id" />(<xsl:value-of select="@version" />)"
-			[shape=record,
-				tooltip="<xsl:value-of select="@agencyID" />:<xsl:value-of select="@id" />(<xsl:value-of select="@version" />)",
-				URL="<xsl:value-of select="$registryRestUrl"/>datastructure/<xsl:value-of select="@agencyID" />/<xsl:value-of select="@id" />/<xsl:value-of select="@version" />",
+			<!-- DSD-Agency:Name(Version) as node identifier -->
+			<xsl:text>"</xsl:text>
+			<xsl:call-template name="artefactIdentifier"><xsl:with-param name="artefactNode" select="."/></xsl:call-template>
+			<xsl:text>"</xsl:text>
+			<!-- rounded rectangle record node with DSD name and description (if existing) as tooltip -->
+			[shape=Mrecord,
+				<xsl:text>tooltip="</xsl:text>
+					<xsl:value-of select="./com:Name" />
+					<xsl:if test="exists(./com:Description)">\n\n<xsl:value-of select="./com:Description" /></xsl:if>
+				<xsl:text>"</xsl:text>
+				,
+				URL="<xsl:value-of select="$registryRestEndpoint"/>datastructure/<xsl:value-of select="@agencyID" />/<xsl:value-of select="@id" />/<xsl:value-of select="@version" />",
 				target=_blank,
-				label="
+				label=" <!-- TODO: convert to HTML label and all text to HTML table to support enhanced formatting ( label=< instead of label=" ) -->
+
+					<!-- DSD identifier -->
 					{<xsl:value-of select="@agencyID" />|<xsl:value-of select="@id" />|<xsl:value-of select="@version" />}
-					<!-- TODO: add DSD description -->
+
+					<!-- all dimensions -->
 					<xsl:for-each select=".//str:DimensionList/str:Dimension"> 
 						<xsl:call-template name="conceptLabel">
 							<xsl:with-param name="conceptNode" select="."/>
 						</xsl:call-template>
 					</xsl:for-each>
+
+					<!-- all attributes -->
 					<xsl:for-each select=".//str:AttributeList/str:Attribute">
 						<xsl:call-template name="conceptLabel">
 							<xsl:with-param name="conceptNode" select="."/>
 						</xsl:call-template>
 					</xsl:for-each>
+
+					<!-- INFO: measures are left out because there is no good support in SDMX 2.1 -->
 				",
 			];
 		</xsl:for-each>
@@ -55,27 +73,29 @@
 		<!-- loop through structure maps for creating connectors -->
 		<xsl:for-each select=".//str:StructureMap">
 			"<xsl:value-of select="./str:Target/Ref/@agencyID" />:<xsl:value-of select="./str:Target/Ref/@id" />(<xsl:value-of select="./str:Target/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Target/Ref/@id" />
-			->
+			-> <!-- TODO: MAPPINGS: no arrow with two-dashes symbol instead of -> for mappings (search for no existing annotation with cardinaltiy) --> 
 			"<xsl:value-of select="./str:Source/Ref/@agencyID" />:<xsl:value-of select="./str:Source/Ref/@id" />(<xsl:value-of select="./str:Source/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Source/Ref/@id" />
-			<xsl:text> [dir="both" </xsl:text>
+			<xsl:text> [</xsl:text>
+
+			<!-- read cardinality annotations -->
+
+
 			<xsl:for-each select="./com:Annotations/com:Annotation">
-				<!-- TODO: add generalisation arrowhead and arrowtail -->
+		
+				<!-- head or tail -->
 				<xsl:choose>
 					<xsl:when test="./com:AnnotationType='CARDINALITY_SOURCE2TARGET'">
-						<xsl:text> arrowtail="</xsl:text>
+						<xsl:text> dir="both" arrowtail="</xsl:text>
+						<xsl:call-template name="cardinalityArrow">	<xsl:with-param name="AnnotationTitle" select="./com:AnnotationTitle"/></xsl:call-template>
+						<xsl:text>" </xsl:text>
 					</xsl:when>
 					<xsl:when test="./com:AnnotationType='CARDINALITY_TARGET2SOURCE'">
 						<xsl:text> arrowhead="</xsl:text>
+						<xsl:call-template name="cardinalityArrow">	<xsl:with-param name="AnnotationTitle" select="./com:AnnotationTitle"/></xsl:call-template>
+						<xsl:text>" </xsl:text>
 					</xsl:when>					
 				</xsl:choose>
-				<xsl:choose>
-					<xsl:when test="./com:AnnotationType='CARDINALITY_SOURCE2TARGET' or ./com:AnnotationType='CARDINALITY_TARGET2SOURCE'">
-						<xsl:call-template name="cardinalityArrow">
-							<xsl:with-param name="AnnotationTitle" select="./com:AnnotationTitle"/>
-						</xsl:call-template>
-					</xsl:when>			
-				</xsl:choose>
-				<xsl:text>" </xsl:text>
+						
 			</xsl:for-each>
 			<xsl:text>] </xsl:text>
 		</xsl:for-each>
@@ -88,9 +108,22 @@
 		|{
 			&lt;<xsl:value-of select="$conceptNode/@id" />&gt; 
 			<xsl:value-of select="substring(local-name($conceptNode),1,3)" /> - 
-			<xsl:value-of select="$conceptNode/str:ConceptIdentity/Ref/@agencyID" />.<xsl:value-of select="$conceptNode/str:ConceptIdentity/Ref/@maintainableParentID" />:<xsl:value-of select="$conceptNode/@id" />
-			\n<xsl:value-of select="key('concept',$conceptNode/str:ConceptIdentity/Ref/@id)" />
-			<!-- TODO: add data type / code list reference -->
+			<xsl:value-of select="$conceptNode/str:ConceptIdentity/Ref/@agencyID" />:<xsl:value-of select="$conceptNode/str:ConceptIdentity/Ref/@maintainableParentID" />(<xsl:value-of select="$conceptNode/str:ConceptIdentity/Ref/@maintainableParentVersion" />).<xsl:value-of select="$conceptNode/@id" />
+			\n<xsl:value-of select="key('concept',$conceptNode/str:ConceptIdentity/Ref/@id)/com:Name" />
+
+			<!-- data type reference -->
+			<xsl:if test="exists($conceptNode/str:LocalRepresentation/str:TextFormat)">
+				<xsl:text> [</xsl:text><xsl:value-of select="$conceptNode/str:LocalRepresentation/str:TextFormat/@textType" /><xsl:text>]</xsl:text>				
+			</xsl:if>
+
+			<!-- code list reference -->
+			<xsl:if test="exists($conceptNode/str:LocalRepresentation/str:Enumeration)">
+				<xsl:text>\n[🧾</xsl:text>
+					<xsl:call-template name="artefactIdentifier">
+						<xsl:with-param name="artefactNode" select="$conceptNode/str:LocalRepresentation/str:Enumeration/Ref"/>
+					</xsl:call-template>
+				<xsl:text>]</xsl:text>
+			</xsl:if>
 		}
 	</xsl:template>
 
@@ -110,6 +143,9 @@
 			</xsl:when>
 		</xsl:choose>
 		<xsl:choose>
+			<xsl:when test="substring($AnnotationTitle,1,1)='G'">
+				<xsl:text>onormal</xsl:text>
+			</xsl:when>
 			<xsl:when test="substring($AnnotationTitle,1,1)='N'">
 				<xsl:text>crow</xsl:text>
 			</xsl:when>
