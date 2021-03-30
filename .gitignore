@@ -2,3 +2,4 @@ xslt-test/simple.txt
 sdmx2gv/*.svg
 sdmx2gv/*.gv
 sdmx2gv/*.xml
+temp/*.*

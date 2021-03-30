@@ -111,7 +111,7 @@ java -jar $PSScriptRoot/../bin-java/SaxonHE/saxon-he-10.3.jar -s:$sdmxFile -xsl:
 
 Write-Verbose "SDMX -> GV done."
 
-$outputFile = ($null -eq $outputFile) ? $outputGV -replace "\.gv",".svg" : $outputFile
+$outputFile = ($null -eq $outputFile) ? $outputGV -replace "\.gv",".$format" : $outputFile+"."+$format
 Write-Verbose "converting $outputGV -> $outputFile"
 Invoke-Expression "$global:graphvizExe -T$format $outputGV -o$outputFile"
 $format = $format.ToUpper()
@@ -128,7 +128,8 @@ if (-not $keepGV) {
 }  
 
 Write-Output ""
-Write-Output "Conversion done: $outputFile"
+Write-Output "Conversion done, open it with:"
+Write-Output " start $outputFile"
 
 Write-Output ""
 Write-Output ""
