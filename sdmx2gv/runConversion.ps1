@@ -16,11 +16,15 @@ Param(
     [parameter(ValueFromPipeline)] $sdmxUrl,
     <#  name of the XML file used. If sdmxUrl is set, that will be the download file and it will be kept. If sdmxUrl is not set, it will be the file used for conversion #>
     $sdmxFile,
+    <# path of output file without extension. In case it is not provided, the path of the SDMX file is used #>
+    $outputFile,
     <#  the output format can be any format supported by Graphviz
         https://www.graphviz.org/doc/info/output.html
         Default is SVG
     #>
-    $format = "svg"
+    $format = "svg",
+    <# keep the intermediate GV file #>
+    [switch] $keepGV
 )
 
 Write-Output "..."
@@ -93,7 +97,7 @@ if(($sdmxExists -eq $true) -and ($null -eq $sdmxUrl)) {
 } else {
     <# download input file #>
     try {
-        Write-Verbose "Attempting download $sdmxUrl to $sdmxFile..."
+        Write-Output "Attempting download $sdmxUrl to $sdmxFile..."
         Invoke-RestMethod -Uri $sdmxUrl -OutFile $sdmxFile
     } catch {
         Write-Verbose "Trying to delete $sdmxFile..."
@@ -107,7 +111,9 @@ java -jar $PSScriptRoot/../bin-java/SaxonHE/saxon-he-10.3.jar -s:$sdmxFile -xsl:
 
 Write-Verbose "SDMX -> GV done."
 
-Invoke-Expression "$global:graphvizExe -T$format $outputGV -O"
+$outputFile = ($null -eq $outputFile) ? $outputGV -replace "\.gv",".svg" : $outputFile
+Write-Verbose "converting $outputGV -> $outputFile"
+Invoke-Expression "$global:graphvizExe -T$format $outputGV -o$outputFile"
 $format = $format.ToUpper()
 Write-Verbose "GV -> $format done."
 
@@ -116,9 +122,13 @@ if ($sdmxFile.StartsWith([System.IO.Path]::GetTempPath())) {
     Write-Verbose "Removing temporary file $sdmxFile"
     Remove-Item $sdmxFile  
 }  
+if (-not $keepGV) {
+    Write-Verbose "Removing temporary file $outputGV"
+    Remove-Item $outputGV  
+}  
 
 Write-Output ""
-Write-Output "Conversion done."
+Write-Output "Conversion done: $outputFile"
 
 Write-Output ""
 Write-Output ""
