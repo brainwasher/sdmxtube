@@ -14,8 +14,9 @@
             "cwd": "${workspaceFolder}",
             "args": [   "-Verbose" 
                         ,"-Debug"
+                    //    ,"-keepGV"
                         ,"-sdmxUrl 'http://localhost:8080/ws/public/sdmxapi/rest/categorisation/all/all/latest/?format=sdmx-2.1&detail=full&references=all&prettyPrint=true'"
-                        ,"-sdmxFile ${workspaceFolder}/sdmx2gv/_example_StructureMap.xml"
+                        ,"-outputFile ${workspaceFolder}/temp/sdmx2gv"
                     ]
         }
     ]
