@@ -107,6 +107,7 @@ if(($sdmxExists -eq $true) -and ($null -eq $sdmxUrl)) {
 }
 
 $outputGV = $sdmxFile -replace "\.xml",".gv"
+Write-Verbose "converting $sdmxFile -> $outputGV"
 java -jar $PSScriptRoot/../bin-java/SaxonHE/saxon-he-10.3.jar -s:$sdmxFile -xsl:$PSScriptRoot/structuremap2erm.xslt -o:$outputGV
 
 Write-Verbose "SDMX -> GV done."
