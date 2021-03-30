@@ -50,8 +50,8 @@ Write-Verbose ""
 Write-Verbose "Detected OS: $osString"
 
 <# verbose OS choice for DOT executable #>
-if($IsWindows) { Write-Verbose "Running on Windows: local portable graphviz, wget used..." } 
-elseif($IsLinux) { Write-Verbose "Running on Linux: trying installed graphviz, wget packages..." }
+if($IsWindows) { Write-Verbose "Running on Windows: local portable graphviz used..." } 
+elseif($IsLinux) { Write-Verbose "Running on Linux: trying installed graphviz packages..." }
 else { Write-Verbose "Running on operating system that was not tested (MacOS?): trying installed graphviz, wget packages..." }
 
 <# testing prerequists #>
