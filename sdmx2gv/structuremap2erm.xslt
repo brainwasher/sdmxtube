@@ -7,7 +7,7 @@
 	<xsl:output method="text" media-type="text/vnd.graphviz"/>
 
 	<!-- as the base REST URL of the registry here with trailing /. That will add the REST links to the artefacts in the graph (not supported in PNG, use SVG) -->
-	<xsl:variable name="registryRestUrl">http://localhost:8080/FusionRegistry-10.3.5/ws/public/sdmxapi/rest/</xsl:variable>
+	<xsl:param name="registryBaseUrl" select="'http://localhost:8080/FusionRegistry-10.3.5/ws/public/sdmxapi/rest/'" />
 
 	<!--
 		the key stores the concepts by @id in order to look them up later.
@@ -33,7 +33,7 @@
 			"<xsl:value-of select="@agencyID" />:<xsl:value-of select="@id" />(<xsl:value-of select="@version" />)"
 			[shape=record,
 				tooltip="<xsl:value-of select="@agencyID" />:<xsl:value-of select="@id" />(<xsl:value-of select="@version" />)",
-				URL="<xsl:value-of select="$registryRestUrl"/>datastructure/<xsl:value-of select="@agencyID" />/<xsl:value-of select="@id" />/<xsl:value-of select="@version" />",
+				URL="<xsl:value-of select="$registryBaseUrl"/>datastructure/<xsl:value-of select="@agencyID" />/<xsl:value-of select="@id" />/<xsl:value-of select="@version" />",
 				target=_blank,
 				label="
 					{<xsl:value-of select="@agencyID" />|<xsl:value-of select="@id" />|<xsl:value-of select="@version" />}

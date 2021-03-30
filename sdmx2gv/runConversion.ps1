@@ -29,6 +29,7 @@ ELSE { Write-Verbose "Running on non-Windows OS: trying installed graphviz packa
 <# testing prerequists #>
 try {
     Write-Verbose "Testing DOT: $global:graphvizExe -V"
+    Invoke-Expression "$global:graphvizExe -V" <# this is currently not silent #>
     <# TODO: silence output in non-verbose mode this Out-Null below did not work #>
     <# 
     if($VerbosePreference -eq "SilentlyContinue") { 
@@ -37,7 +38,6 @@ try {
         Invoke-Expression "$global:graphvizExe -V"
     }
     #>
-    Invoke-Expression "$global:graphvizExe -V" <# this is currently not silent #>
 } catch {
     Write-Output "For some reason graphviz failed, is graphviz installed?"
     Write-Output "On Linux, install graphviz depending on your distro: "
