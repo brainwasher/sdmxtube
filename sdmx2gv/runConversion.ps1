@@ -122,11 +122,15 @@ Write-Verbose "GV -> $format done."
 if ($sdmxFile.StartsWith([System.IO.Path]::GetTempPath())) {
     Write-Verbose "Removing temporary file $sdmxFile"
     Remove-Item $sdmxFile  
-}  
+}  else {     
+    Write-Verbose "Keeping temporary file $sdmxFile"
+}
 if (-not $keepGV) {
     Write-Verbose "Removing temporary file $outputGV"
     Remove-Item $outputGV  
-}  
+}  else {
+    Write-Verbose "Keeping temporary file $outputGV"
+}
 
 Write-Output ""
 Write-Output "Conversion done, open it with:"

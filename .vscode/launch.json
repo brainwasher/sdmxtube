@@ -12,10 +12,13 @@
             "request": "launch",
             "script": "${workspaceFolder}/sdmx2gv/runConversion.ps1",
             "cwd": "${workspaceFolder}",
-            "args": [   "-Verbose" 
+            "args": [    "-Verbose" 
                         ,"-Debug"
-                    //    ,"-keepGV"
-                        ,"-sdmxUrl 'http://localhost:8080/ws/public/sdmxapi/rest/categorisation/all/all/latest/?format=sdmx-2.1&detail=full&references=all&prettyPrint=true'"
+                        ,"-sdmxFile ${workspaceFolder}/temp/sdmx2gv.xml"    // enable this row for debugging purposes if you want to keep the XML file or use an existing XML file
+                        ,"-keepGV"                                          // enable this row for debugging purposes if you want to keep the generated GV file
+                        ,"-sdmxUrl 'http://localhost:8080/ws/public/sdmxapi/rest/structureset/SIMM/all/latest/?format=sdmx-2.1&detail=full&references=all&prettyPrint=true'"   // disable this row if you want to use an existing XML file (provide path under sdmxFile parameter)
+                    //    ,"-sdmxUrl 'http://localhost:8080/ws/public/sdmxapi/rest/structureset/SIMM/SS_SP01_AC/latest/?format=sdmx-2.1&detail=full&references=all&prettyPrint=true'"   // SP01 AnaCredit example
+                    //    ,"-sdmxUrl 'http://localhost:8080/ws/public/sdmxapi/rest/structureset/SIMM/SS_SP01/latest/?format=sdmx-2.1&detail=full&references=all&prettyPrint=true'"   // SP01 BIRD example
                         ,"-outputFile ${workspaceFolder}/temp/sdmx2gv"
                     ]
         }
