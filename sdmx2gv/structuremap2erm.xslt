@@ -20,7 +20,7 @@
 
 	<xsl:template match="/">
 		<!-- draw directed graph from left to right (LR) -->
-		<xsl:text>digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Entity Relationship Model Generator\nhttps://github.com/brainwasher/sdmxtube\n\ngraph generated </xsl:text>
+		<xsl:text>digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Generator\nhttps://github.com/brainwasher/sdmxtube\n\ngraph generated </xsl:text>
 		<xsl:value-of select="current-dateTime()" />
 		<xsl:text>"; </xsl:text>
 		<xsl:apply-templates />
@@ -82,7 +82,9 @@
 				subgraph cluster_</xsl:text><xsl:value-of select="./@id" />
 			<xsl:text> { bgcolor="floralwhite" label="</xsl:text>
 				<xsl:value-of select="./com:Name" />
-			<xsl:text>\n\n "</xsl:text>
+			<xsl:text>\n</xsl:text>
+				<xsl:call-template name="artefactIdentifier"><xsl:with-param name="artefactNode" select="."/></xsl:call-template>
+			<xsl:text>\n "</xsl:text>
 			<!-- loop through structure maps for creating connectors -->
 			<xsl:for-each select="./str:StructureMap">
 				"<xsl:value-of select="./str:Target/Ref/@agencyID" />:<xsl:value-of select="./str:Target/Ref/@id" />(<xsl:value-of select="./str:Target/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Target/Ref/@id" />
