@@ -17,15 +17,10 @@
 		TODO: in case concepts from different concept schemes have the same @id, this creates wrong output (@id is not unique across concept schemes)
 	-->
 	<xsl:key name="concept" match="str:ConceptScheme//str:Concept" use="@id" />
-	<!-- 
-		TODO: do we need them for clusters?
-		the key stores the structuremaps by @id
-	-->
-	<!-- <xsl:key name="categorisation" match="//str:Categorisation/str:Source/Ref[@class='StructureSet']" use="@id" /> -->
 
 	<xsl:template match="/">
 		<!-- draw directed graph from left to right (LR) -->
-		<xsl:text>digraph DependecyMap { rankdir=LR; label="\n\n\nEntity Relationship Model\n\ngenerated </xsl:text>
+		<xsl:text>digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Entity Relationship Model Generator\nhttps://github.com/brainwasher/sdmxtube\n\ngraph generated </xsl:text>
 		<xsl:value-of select="current-dateTime()" />
 		<xsl:text>"; </xsl:text>
 		<xsl:apply-templates />
@@ -45,7 +40,7 @@
 			<xsl:call-template name="artefactIdentifier"><xsl:with-param name="artefactNode" select="."/></xsl:call-template>
 			<xsl:text>"</xsl:text>
 			<!-- rounded rectangle record node with DSD name and description (if existing) as tooltip -->
-			[shape=Mrecord,
+			[shape=Mrecord, style="filled" fillcolor="azure"
 				<xsl:text>tooltip="</xsl:text>
 					<xsl:value-of select="./com:Name" />
 					<xsl:if test="exists(./com:Description)">\n\n<xsl:value-of select="./com:Description" /></xsl:if>
@@ -79,51 +74,44 @@
 			];
 		</xsl:for-each>
 		
-		<!-- TODO: scan category schemes for creating subgraph clusters -->
-		<!-- look for "cluster" https://graphviz.org/Gallery/directed/cluster.html -->
-		<!-- subgraph cluster_0 { label="Entity Relationship Model" } -->
-		<!-- categorisations that contain a StructureSet -->
-		<!-- currently only debug info -->
-		<!--
-		<xsl:for-each select=".//str:Categorisation/str:Source/Ref[@class='StructureSet']">
-				<xsl:text>
-				// Categorisation </xsl:text>
-				<xsl:call-template name="artefactIdentifier"><xsl:with-param name="artefactNode" select="../.."/></xsl:call-template>
-				<xsl:text>
-				// for StructureSet </xsl:text>	
-				<xsl:call-template name="artefactIdentifier"><xsl:with-param name="artefactNode" select="../.."/></xsl:call-template>	
-		</xsl:for-each>
-		-->
+		<!-- loop through structure sets for creating clusters -->
+		<xsl:for-each select=".//str:StructureSet">
+			<xsl:text> 
+				// Structure set for cluster: </xsl:text><xsl:call-template name="artefactIdentifier">	<xsl:with-param name="artefactNode" select="."/></xsl:call-template>
+			<xsl:text>
+				subgraph cluster_</xsl:text><xsl:value-of select="./@id" />
+			<xsl:text> { bgcolor="floralwhite" label="</xsl:text>
+				<xsl:value-of select="./com:Name" />
+			<xsl:text>\n\n "</xsl:text>
+			<!-- loop through structure maps for creating connectors -->
+			<xsl:for-each select="./str:StructureMap">
+				"<xsl:value-of select="./str:Target/Ref/@agencyID" />:<xsl:value-of select="./str:Target/Ref/@id" />(<xsl:value-of select="./str:Target/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Target/Ref/@id" />
+				-> <!-- TODO: MAPPINGS: no arrow with two-dashes symbol instead of -> for mappings (search for no existing annotation with cardinaltiy) --> 
+				"<xsl:value-of select="./str:Source/Ref/@agencyID" />:<xsl:value-of select="./str:Source/Ref/@id" />(<xsl:value-of select="./str:Source/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Source/Ref/@id" />
+				<xsl:text> [</xsl:text>
 
-		<!-- loop through structure maps for creating connectors -->
-		<xsl:for-each select=".//str:StructureMap">
-			"<xsl:value-of select="./str:Target/Ref/@agencyID" />:<xsl:value-of select="./str:Target/Ref/@id" />(<xsl:value-of select="./str:Target/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Target/Ref/@id" />
-			-> <!-- TODO: MAPPINGS: no arrow with two-dashes symbol instead of -> for mappings (search for no existing annotation with cardinaltiy) --> 
-			"<xsl:value-of select="./str:Source/Ref/@agencyID" />:<xsl:value-of select="./str:Source/Ref/@id" />(<xsl:value-of select="./str:Source/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Source/Ref/@id" />
-			<xsl:text> [</xsl:text>
-
-			<!-- read cardinality annotations -->
-
-
-			<xsl:for-each select="./com:Annotations/com:Annotation">
-		
-				<!-- head or tail -->
-				<xsl:choose>
-					<xsl:when test="./com:AnnotationType='CARDINALITY_SOURCE2TARGET'">
-						<xsl:text> dir="both" arrowtail="</xsl:text>
-						<xsl:call-template name="cardinalityArrow">	<xsl:with-param name="AnnotationTitle" select="./com:AnnotationTitle"/></xsl:call-template>
-						<xsl:text>" </xsl:text>
-					</xsl:when>
-					<xsl:when test="./com:AnnotationType='CARDINALITY_TARGET2SOURCE'">
-						<xsl:text> arrowhead="</xsl:text>
-						<xsl:call-template name="cardinalityArrow">	<xsl:with-param name="AnnotationTitle" select="./com:AnnotationTitle"/></xsl:call-template>
-						<xsl:text>" </xsl:text>
-					</xsl:when>					
-				</xsl:choose>
-						
-			</xsl:for-each>
-			<xsl:text>] </xsl:text>
-		</xsl:for-each>
+				<!-- read cardinality annotations -->
+				<xsl:for-each select="./com:Annotations/com:Annotation">
+			
+					<!-- head or tail -->
+					<xsl:choose>
+						<xsl:when test="./com:AnnotationType='CARDINALITY_SOURCE2TARGET'">
+							<xsl:text> dir="both" arrowtail="</xsl:text>
+							<xsl:call-template name="cardinalityArrow">	<xsl:with-param name="AnnotationTitle" select="./com:AnnotationTitle"/></xsl:call-template>
+							<xsl:text>" </xsl:text>
+						</xsl:when>
+						<xsl:when test="./com:AnnotationType='CARDINALITY_TARGET2SOURCE'">
+							<xsl:text> arrowhead="</xsl:text>
+							<xsl:call-template name="cardinalityArrow">	<xsl:with-param name="AnnotationTitle" select="./com:AnnotationTitle"/></xsl:call-template>
+							<xsl:text>" </xsl:text>
+						</xsl:when>					
+					</xsl:choose>
+							
+				</xsl:for-each>
+				<xsl:text>] </xsl:text>
+			</xsl:for-each> <!-- end structureMap (=relationships) -->
+			<xsl:text> } </xsl:text>
+		</xsl:for-each> <!-- end strucutreSet (=cluster) -->
 	</xsl:template>
 
 	<!-- template to display a concept within an entity -->
