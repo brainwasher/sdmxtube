@@ -59,7 +59,7 @@
 					{<xsl:value-of select="@agencyID" />|<xsl:value-of select="@id" />|<xsl:value-of select="@version" />}
 
 					<!-- all dimensions -->
-					<xsl:for-each select=".//str:DimensionList/str:Dimension"> 
+					<xsl:for-each select=".//str:DimensionList/str:Dimension | .//str:DimensionList/str:TimeDimension"> 
 						<xsl:call-template name="conceptLabel">
 							<xsl:with-param name="conceptNode" select="."/>
 						</xsl:call-template>
