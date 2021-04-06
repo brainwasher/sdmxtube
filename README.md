@@ -9,6 +9,7 @@ SDMX-related tools, scripts and ideas. Why? Because I can...
 * **lib**: library, with one subfolder per technology
 * **sdmx2gv**: SDMX to GraphViz DOT visualisations of SDMX artefacts as a graph
   * _structuremap2erm_: takes an SDMX _StructureMap_ artefact and generates an entity relationship model with support for the ECB draft controlled annotations for cardinalities (linked ot the _ComponentMap_) 
+* **sdmxround**: round values in an SDMX dataset
 * **xslt-test**: a little playground for XSLT scripting - you may choose to ignore if you are beyond "hello world" in XSLT...
 
 ## how branches are used
