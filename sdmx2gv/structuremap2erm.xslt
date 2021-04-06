@@ -55,11 +55,13 @@
 				target=_blank,
 				label=" <!-- TODO: convert to HTML label and all text to HTML table to support enhanced formatting ( label=< instead of label=" ) -->
 
+					<!-- DSD name -->
+					<xsl:value-of select="./com:Name" />
 					<!-- DSD identifier -->
-					{<xsl:value-of select="@agencyID" />|<xsl:value-of select="@id" />|<xsl:value-of select="@version" />}
+					|{<xsl:value-of select="@agencyID" />|<xsl:value-of select="@id" />|<xsl:value-of select="@version" />}
 
 					<!-- all dimensions -->
-					<xsl:for-each select=".//str:DimensionList/str:Dimension"> 
+					<xsl:for-each select=".//str:DimensionList/str:Dimension | .//str:DimensionList/str:TimeDimension"> 
 						<xsl:call-template name="conceptLabel">
 							<xsl:with-param name="conceptNode" select="."/>
 						</xsl:call-template>
