@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <mes:Structure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
   <mes:Header>
-    <mes:ID>IREF444073</mes:ID>
+    <mes:ID>IREF144792</mes:ID>
     <mes:Test>false</mes:Test>
-    <mes:Prepared>2021-03-30T22:46:43Z</mes:Prepared>
+    <mes:Prepared>2021-04-06T13:07:55Z</mes:Prepared>
     <mes:Sender id="Unknown"></mes:Sender>
     <mes:Receiver id="not_supplied"></mes:Receiver>
   </mes:Header>
@@ -171,36 +171,12 @@ The main aims of the ILO are to promote rights at work, encourage decent employm
         <str:Category urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=SIMM:SP01(1.0.0).POC_IMM" id="POC_IMM">
           <com:Name xml:lang="en">Proof of Concept Implementation Model (IMM)</com:Name>
         </str:Category>
+        <str:Category urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=SIMM:SP01(1.0.0).ANACREDIT_POC_IMM" id="ANACREDIT_POC_IMM">
+          <com:Name xml:lang="en">PoC Implementation Model for AnaCredit</com:Name>
+        </str:Category>
       </str:CategoryScheme>
     </str:CategorySchemes>
     <str:Categorisations>
-      <str:Categorisation urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=SIMM:415691f1-d932-2f0e-df26-cbb3fda0fc6a(1.0)" isExternalReference="false" agencyID="SIMM" id="415691f1-d932-2f0e-df26-cbb3fda0fc6a" isFinal="false" version="1.0">
-        <com:Name xml:lang="en">Category 'SIMM:SP01(1.0.0).POC_LDM' linking to DataStructure 'SIMM:FinancialAsset_ESP(1.0.0)'</com:Name>
-        <str:Source>
-          <Ref package="datastructure" agencyID="SIMM" id="FinancialAsset_ESP" version="1.0.0" class="DataStructure"></Ref>
-        </str:Source>
-        <str:Target>
-          <Ref maintainableParentID="SP01" package="categoryscheme" maintainableParentVersion="1.0.0" agencyID="SIMM" id="POC_LDM" class="Category"></Ref>
-        </str:Target>
-      </str:Categorisation>
-      <str:Categorisation urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=SIMM:4179e963-0d3f-3228-4291-7aa8a1142a49(1.0)" isExternalReference="false" agencyID="SIMM" id="4179e963-0d3f-3228-4291-7aa8a1142a49" isFinal="false" version="1.0">
-        <com:Name xml:lang="en">Category 'SIMM:SP01(1.0.0).POC_LDM' linking to DataStructure 'SIMM:EquitySecurity(1.0.0)'</com:Name>
-        <str:Source>
-          <Ref package="datastructure" agencyID="SIMM" id="EquitySecurity" version="1.0.0" class="DataStructure"></Ref>
-        </str:Source>
-        <str:Target>
-          <Ref maintainableParentID="SP01" package="categoryscheme" maintainableParentVersion="1.0.0" agencyID="SIMM" id="POC_LDM" class="Category"></Ref>
-        </str:Target>
-      </str:Categorisation>
-      <str:Categorisation urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=SIMM:8af8b646-e3c1-b5e6-51e1-5f7fc3dfbcd9(1.0)" isExternalReference="false" agencyID="SIMM" id="8af8b646-e3c1-b5e6-51e1-5f7fc3dfbcd9" isFinal="false" version="1.0">
-        <com:Name xml:lang="en">Category 'SIMM:SP01(1.0.0).POC_LDM' linking to DataStructure 'SIMM:FinancialAsset_Inst(1.0.0)'</com:Name>
-        <str:Source>
-          <Ref package="datastructure" agencyID="SIMM" id="FinancialAsset_Inst" version="1.0.0" class="DataStructure"></Ref>
-        </str:Source>
-        <str:Target>
-          <Ref maintainableParentID="SP01" package="categoryscheme" maintainableParentVersion="1.0.0" agencyID="SIMM" id="POC_LDM" class="Category"></Ref>
-        </str:Target>
-      </str:Categorisation>
       <str:Categorisation urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=SIMM:catss01(1.0)" isExternalReference="false" agencyID="SIMM" id="catss01" isFinal="false" version="1.0">
         <com:Name xml:lang="en">Category 'SIMM:SP01(1.0.0).POC_LDM' linking to StructureSet 'SIMM:SS_SP1(1.0.0)'</com:Name>
         <str:Source>
@@ -210,40 +186,13 @@ The main aims of the ILO are to promote rights at work, encourage decent employm
           <Ref maintainableParentID="SP01" package="categoryscheme" maintainableParentVersion="1.0.0" agencyID="SIMM" id="POC_LDM" class="Category"></Ref>
         </str:Target>
       </str:Categorisation>
-      <str:Categorisation urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=SIMM:d50a8fdc-45f5-0541-0a9f-87254f99bf33(1.0)" isExternalReference="false" agencyID="SIMM" id="d50a8fdc-45f5-0541-0a9f-87254f99bf33" isFinal="false" version="1.0">
-        <com:Name xml:lang="en">Category 'SIMM:SP01(1.0.0).POC_LDM' linking to DataStructure 'SIMM:FinancialAsset(1.0.0)'</com:Name>
+      <str:Categorisation urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=SIMM:catss01_ac(1.0)" isExternalReference="false" agencyID="SIMM" id="catss01_ac" isFinal="false" version="1.0">
+        <com:Name xml:lang="en">Category 'SIMM:SP01(1.0.0).ANACREDIT_POC_IMM' linking to StructureSet 'SIMM:SS_SP1_AC(1.0.0)'</com:Name>
         <str:Source>
-          <Ref package="datastructure" agencyID="SIMM" id="FinancialAsset" version="1.0.0" class="DataStructure"></Ref>
+          <Ref package="mapping" agencyID="SIMM" id="SS_SP01_AC" version="1.0.0" class="StructureSet"></Ref>
         </str:Source>
         <str:Target>
-          <Ref maintainableParentID="SP01" package="categoryscheme" maintainableParentVersion="1.0.0" agencyID="SIMM" id="POC_LDM" class="Category"></Ref>
-        </str:Target>
-      </str:Categorisation>
-      <str:Categorisation urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=SIMM:e6190c10-6c3d-6371-ff9b-040348c8c6d2(1.0)" isExternalReference="false" agencyID="SIMM" id="e6190c10-6c3d-6371-ff9b-040348c8c6d2" isFinal="false" version="1.0">
-        <com:Name xml:lang="en">Category 'SIMM:SP01(1.0.0).POC_LDM' linking to DataStructure 'SIMM:EquitySecurityPosition(1.0.0)'</com:Name>
-        <str:Source>
-          <Ref package="datastructure" agencyID="SIMM" id="EquitySecurityPosition" version="1.0.0" class="DataStructure"></Ref>
-        </str:Source>
-        <str:Target>
-          <Ref maintainableParentID="SP01" package="categoryscheme" maintainableParentVersion="1.0.0" agencyID="SIMM" id="POC_LDM" class="Category"></Ref>
-        </str:Target>
-      </str:Categorisation>
-      <str:Categorisation urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=SIMM:ec0c1203-8972-46a4-2d67-6138c5e07296(1.0)" isExternalReference="false" agencyID="SIMM" id="ec0c1203-8972-46a4-2d67-6138c5e07296" isFinal="false" version="1.0">
-        <com:Name xml:lang="en">Category 'SIMM:SP01(1.0.0).POC_LDM' linking to DataStructure 'SIMM:Party(1.0.0)'</com:Name>
-        <str:Source>
-          <Ref package="datastructure" agencyID="SIMM" id="Party" version="1.0.0" class="DataStructure"></Ref>
-        </str:Source>
-        <str:Target>
-          <Ref maintainableParentID="SP01" package="categoryscheme" maintainableParentVersion="1.0.0" agencyID="SIMM" id="POC_LDM" class="Category"></Ref>
-        </str:Target>
-      </str:Categorisation>
-      <str:Categorisation urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=SIMM:f8068972-f08f-811e-4bb3-c942fdbd57ea(1.0)" isExternalReference="false" agencyID="SIMM" id="f8068972-f08f-811e-4bb3-c942fdbd57ea" isFinal="false" version="1.0">
-        <com:Name xml:lang="en">Category 'SIMM:SP01(1.0.0).POC_LDM' linking to DataStructure 'SIMM:Instrument(1.0.0)'</com:Name>
-        <str:Source>
-          <Ref package="datastructure" agencyID="SIMM" id="Instrument" version="1.0.0" class="DataStructure"></Ref>
-        </str:Source>
-        <str:Target>
-          <Ref maintainableParentID="SP01" package="categoryscheme" maintainableParentVersion="1.0.0" agencyID="SIMM" id="POC_LDM" class="Category"></Ref>
+          <Ref maintainableParentID="SP01" package="categoryscheme" maintainableParentVersion="1.0.0" agencyID="SIMM" id="ANACREDIT_POC_IMM" class="Category"></Ref>
         </str:Target>
       </str:Categorisation>
     </str:Categorisations>
@@ -9778,9 +9727,439 @@ The main aims of the ILO are to promote rights at work, encourage decent employm
             <str:TextFormat isSequence="true" textType="Integer"></str:TextFormat>
           </str:CoreRepresentation>
         </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).CI" id="CI">
+          <com:Name xml:lang="en">Contract identifier</com:Name>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).RIAD_II" id="RIAD_II">
+          <com:Name xml:lang="en">RIAD internal identifier</com:Name>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).ER" id="ER">
+          <com:Name xml:lang="en">Entity role</com:Name>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).OAI" id="OAI">
+          <com:Name xml:lang="en">Observed agent identifier</com:Name>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).PPI" id="PPI">
+          <com:Name xml:lang="en">Protection provider identifier</com:Name>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).JLA" id="JLA">
+          <com:Name xml:lang="en">Joint liability amount</com:Name>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).TOI" id="TOI">
+          <com:Name xml:lang="en">Type of instrument</com:Name>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).IS" id="IS">
+          <com:Name xml:lang="en">Institutional sector</com:Name>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).EA" id="EA">
+          <com:Name xml:lang="en">Economic activity</com:Name>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).TOP" id="TOP">
+          <com:Name xml:lang="en">Type of protection</com:Name>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).MDOP" id="MDOP">
+          <com:Name xml:lang="en">Maturity date of the protection</com:Name>
+          <str:CoreRepresentation>
+            <str:TextFormat isSequence="false" textType="GregorianDay"></str:TextFormat>
+          </str:CoreRepresentation>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).PAV" id="PAV">
+          <com:Name xml:lang="en">Protection allocated value</com:Name>
+        </str:Concept>
+        <str:Concept urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SIMM.REF:CS_REFERENCE(1.0.0).TPPCAP" id="TPPCAP">
+          <com:Name xml:lang="en">Third party priority claims against the protection</com:Name>
+        </str:Concept>
       </str:ConceptScheme>
     </str:Concepts>
     <str:DataStructures>
+      <str:DataStructure urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=SIMM:ANCRDT_ENTTY_D(1.0.0)" isExternalReference="false" agencyID="SIMM" id="ANCRDT_ENTTY_D" isFinal="false" version="1.0.0">
+        <com:Name xml:lang="en">Entity</com:Name>
+        <str:DataStructureComponents>
+          <str:DimensionList urn="urn:sdmx:org.sdmx.infomodel.datastructure.DimensionDescriptor=SIMM:ANCRDT_ENTTY_D(1.0.0).DimensionDescriptor" id="DimensionDescriptor">
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_ENTTY_D(1.0.0).RIAD_II" id="RIAD_II" position="1">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="RIAD_II" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:Dimension>
+            <str:TimeDimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=SIMM:ANCRDT_ENTTY_D(1.0.0).TIME_PERIOD" id="TIME_PERIOD" position="2">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CROSS_DOMAIN_CONCEPTS" package="conceptscheme" maintainableParentVersion="2.0" agencyID="SDMX" id="TIME_PERIOD" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="ObservationalTimePeriod"></str:TextFormat>
+              </str:LocalRepresentation>
+            </str:TimeDimension>
+          </str:DimensionList>
+          <str:AttributeList urn="urn:sdmx:org.sdmx.infomodel.datastructure.AttributeDescriptor=SIMM:ANCRDT_ENTTY_D(1.0.0).AttributeDescriptor" id="AttributeDescriptor">
+            <str:Attribute urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SIMM:ANCRDT_ENTTY_D(1.0.0).IS" assignmentStatus="Conditional" id="IS">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="IS" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="RIAD_II"></Ref>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SIMM:ANCRDT_ENTTY_D(1.0.0).EA" assignmentStatus="Conditional" id="EA">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="EA" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="RIAD_II"></Ref>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+          </str:AttributeList>
+          <str:MeasureList urn="urn:sdmx:org.sdmx.infomodel.datastructure.MeasureDescriptor=SIMM:ANCRDT_ENTTY_D(1.0.0).MeasureDescriptor" id="MeasureDescriptor">
+            <str:PrimaryMeasure urn="urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=SIMM:ANCRDT_ENTTY_D(1.0.0).OBS_VALUE" id="OBS_VALUE">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CROSS_DOMAIN_CONCEPTS" package="conceptscheme" maintainableParentVersion="2.0" agencyID="SDMX" id="OBS_VALUE" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:PrimaryMeasure>
+          </str:MeasureList>
+        </str:DataStructureComponents>
+      </str:DataStructure>
+      <str:DataStructure urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0)" isExternalReference="false" agencyID="SIMM" id="ANCRDT_ENTTY_INSTRMNT_D" isFinal="false" version="1.0.0">
+        <com:Name xml:lang="en">Equity-instrument</com:Name>
+        <str:DataStructureComponents>
+          <str:DimensionList urn="urn:sdmx:org.sdmx.infomodel.datastructure.DimensionDescriptor=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0).DimensionDescriptor" id="DimensionDescriptor">
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0).RIAD_II" id="RIAD_II" position="1">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="RIAD_II" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:Dimension>
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0).OAI" id="OAI" position="2">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="OAI" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:Dimension>
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0).II" id="II" position="3">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="II" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="String"></str:TextFormat>
+              </str:LocalRepresentation>
+            </str:Dimension>
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0).ER" id="ER" position="4">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="ER" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:Dimension>
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0).CI" id="CI" position="5">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="CI" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:Dimension>
+            <str:TimeDimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0).TIME_PERIOD" id="TIME_PERIOD" position="6">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CROSS_DOMAIN_CONCEPTS" package="conceptscheme" maintainableParentVersion="2.0" agencyID="SDMX" id="TIME_PERIOD" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="ObservationalTimePeriod"></str:TextFormat>
+              </str:LocalRepresentation>
+            </str:TimeDimension>
+          </str:DimensionList>
+          <str:AttributeList urn="urn:sdmx:org.sdmx.infomodel.datastructure.AttributeDescriptor=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0).AttributeDescriptor" id="AttributeDescriptor">
+            <str:Attribute urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0).JLA" assignmentStatus="Conditional" id="JLA">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="JLA" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="RIAD_II"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="OAI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="II"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="ER"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="CI"></Ref>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+          </str:AttributeList>
+          <str:MeasureList urn="urn:sdmx:org.sdmx.infomodel.datastructure.MeasureDescriptor=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0).MeasureDescriptor" id="MeasureDescriptor">
+            <str:PrimaryMeasure urn="urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0).OBS_VALUE" id="OBS_VALUE">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CROSS_DOMAIN_CONCEPTS" package="conceptscheme" maintainableParentVersion="2.0" agencyID="SDMX" id="OBS_VALUE" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:PrimaryMeasure>
+          </str:MeasureList>
+        </str:DataStructureComponents>
+      </str:DataStructure>
+      <str:DataStructure urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=SIMM:ANCRDT_INSTRMNT_D(1.0.0)" isExternalReference="false" agencyID="SIMM" id="ANCRDT_INSTRMNT_D" isFinal="false" version="1.0.0">
+        <com:Name xml:lang="en">Instrument</com:Name>
+        <str:DataStructureComponents>
+          <str:DimensionList urn="urn:sdmx:org.sdmx.infomodel.datastructure.DimensionDescriptor=SIMM:ANCRDT_INSTRMNT_D(1.0.0).DimensionDescriptor" id="DimensionDescriptor">
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_INSTRMNT_D(1.0.0).OAI" id="OAI" position="1">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="OAI" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:Dimension>
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_INSTRMNT_D(1.0.0).II" id="II" position="2">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="II" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="String"></str:TextFormat>
+              </str:LocalRepresentation>
+            </str:Dimension>
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_INSTRMNT_D(1.0.0).CI" id="CI" position="3">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="CI" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:Dimension>
+            <str:TimeDimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=SIMM:ANCRDT_INSTRMNT_D(1.0.0).TIME_PERIOD" id="TIME_PERIOD" position="4">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CROSS_DOMAIN_CONCEPTS" package="conceptscheme" maintainableParentVersion="2.0" agencyID="SDMX" id="TIME_PERIOD" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="ObservationalTimePeriod"></str:TextFormat>
+              </str:LocalRepresentation>
+            </str:TimeDimension>
+          </str:DimensionList>
+          <str:AttributeList urn="urn:sdmx:org.sdmx.infomodel.datastructure.AttributeDescriptor=SIMM:ANCRDT_INSTRMNT_D(1.0.0).AttributeDescriptor" id="AttributeDescriptor">
+            <str:Attribute urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SIMM:ANCRDT_INSTRMNT_D(1.0.0).AC" assignmentStatus="Conditional" id="AC">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="AC" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:Enumeration>
+                  <Ref package="codelist" agencyID="SIMM.REF" id="CL_AC" version="1.0.0" class="Codelist"></Ref>
+                </str:Enumeration>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="OAI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="II"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="CI"></Ref>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SIMM:ANCRDT_INSTRMNT_D(1.0.0).TOI" assignmentStatus="Conditional" id="TOI">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="TOI" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="OAI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="II"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="CI"></Ref>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SIMM:ANCRDT_INSTRMNT_D(1.0.0).CUR" assignmentStatus="Conditional" id="CUR">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="CUR" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:Enumeration>
+                  <Ref package="codelist" agencyID="SIMM.REF" id="CL_CUR" version="1.0.0" class="Codelist"></Ref>
+                </str:Enumeration>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="OAI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="II"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="CI"></Ref>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+          </str:AttributeList>
+          <str:MeasureList urn="urn:sdmx:org.sdmx.infomodel.datastructure.MeasureDescriptor=SIMM:ANCRDT_INSTRMNT_D(1.0.0).MeasureDescriptor" id="MeasureDescriptor">
+            <str:PrimaryMeasure urn="urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=SIMM:ANCRDT_INSTRMNT_D(1.0.0).OBS_VALUE" id="OBS_VALUE">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CROSS_DOMAIN_CONCEPTS" package="conceptscheme" maintainableParentVersion="2.0" agencyID="SDMX" id="OBS_VALUE" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:PrimaryMeasure>
+          </str:MeasureList>
+        </str:DataStructureComponents>
+      </str:DataStructure>
+      <str:DataStructure urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0)" isExternalReference="false" agencyID="SIMM" id="ANCRDT_INSTRMNT_PRTCTN_RCVD_D" isFinal="false" version="1.0.0">
+        <com:Name xml:lang="en">Instrument-Protection Received</com:Name>
+        <str:DataStructureComponents>
+          <str:DimensionList urn="urn:sdmx:org.sdmx.infomodel.datastructure.DimensionDescriptor=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0).DimensionDescriptor" id="DimensionDescriptor">
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0).PI" id="PI" position="1">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="PI" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="String"></str:TextFormat>
+              </str:LocalRepresentation>
+            </str:Dimension>
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0).OAI" id="OAI" position="2">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="OAI" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:Dimension>
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0).II" id="II" position="3">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="II" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="String"></str:TextFormat>
+              </str:LocalRepresentation>
+            </str:Dimension>
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0).CI" id="CI" position="4">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="CI" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:Dimension>
+            <str:TimeDimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0).TIME_PERIOD" id="TIME_PERIOD" position="5">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CROSS_DOMAIN_CONCEPTS" package="conceptscheme" maintainableParentVersion="2.0" agencyID="SDMX" id="TIME_PERIOD" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="ObservationalTimePeriod"></str:TextFormat>
+              </str:LocalRepresentation>
+            </str:TimeDimension>
+          </str:DimensionList>
+          <str:AttributeList urn="urn:sdmx:org.sdmx.infomodel.datastructure.AttributeDescriptor=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0).AttributeDescriptor" id="AttributeDescriptor">
+            <str:Attribute urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0).TPPCAP" assignmentStatus="Conditional" id="TPPCAP">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="TPPCAP" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="PI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="OAI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="II"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="CI"></Ref>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0).PAV" assignmentStatus="Conditional" id="PAV">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="PAV" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="PI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="OAI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="II"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="CI"></Ref>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+          </str:AttributeList>
+          <str:MeasureList urn="urn:sdmx:org.sdmx.infomodel.datastructure.MeasureDescriptor=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0).MeasureDescriptor" id="MeasureDescriptor">
+            <str:PrimaryMeasure urn="urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0).OBS_VALUE" id="OBS_VALUE">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CROSS_DOMAIN_CONCEPTS" package="conceptscheme" maintainableParentVersion="2.0" agencyID="SDMX" id="OBS_VALUE" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:PrimaryMeasure>
+          </str:MeasureList>
+        </str:DataStructureComponents>
+      </str:DataStructure>
+      <str:DataStructure urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0)" isExternalReference="false" agencyID="SIMM" id="ANCRDT_PRTCTN_RCVD_D" isFinal="false" version="1.0.0">
+        <com:Name xml:lang="en">Protection Received</com:Name>
+        <str:DataStructureComponents>
+          <str:DimensionList urn="urn:sdmx:org.sdmx.infomodel.datastructure.DimensionDescriptor=SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0).DimensionDescriptor" id="DimensionDescriptor">
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0).PPI" id="PPI" position="1">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="PPI" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:Dimension>
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0).PI" id="PI" position="2">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="PI" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="String"></str:TextFormat>
+              </str:LocalRepresentation>
+            </str:Dimension>
+            <str:Dimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0).OAI" id="OAI" position="3">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="OAI" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:Dimension>
+            <str:TimeDimension urn="urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0).TIME_PERIOD" id="TIME_PERIOD" position="4">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CROSS_DOMAIN_CONCEPTS" package="conceptscheme" maintainableParentVersion="2.0" agencyID="SDMX" id="TIME_PERIOD" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="ObservationalTimePeriod"></str:TextFormat>
+              </str:LocalRepresentation>
+            </str:TimeDimension>
+          </str:DimensionList>
+          <str:AttributeList urn="urn:sdmx:org.sdmx.infomodel.datastructure.AttributeDescriptor=SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0).AttributeDescriptor" id="AttributeDescriptor">
+            <str:Attribute urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0).TOP" assignmentStatus="Conditional" id="TOP">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="TOP" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="PPI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="PI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="OAI"></Ref>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0).MDOP" assignmentStatus="Conditional" id="MDOP">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CS_REFERENCE" package="conceptscheme" maintainableParentVersion="1.0.0" agencyID="SIMM.REF" id="MDOP" class="Concept"></Ref>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat isSequence="false" textType="GregorianDay"></str:TextFormat>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="PPI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="PI"></Ref>
+                </str:Dimension>
+                <str:Dimension>
+                  <Ref id="OAI"></Ref>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+          </str:AttributeList>
+          <str:MeasureList urn="urn:sdmx:org.sdmx.infomodel.datastructure.MeasureDescriptor=SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0).MeasureDescriptor" id="MeasureDescriptor">
+            <str:PrimaryMeasure urn="urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0).OBS_VALUE" id="OBS_VALUE">
+              <str:ConceptIdentity>
+                <Ref maintainableParentID="CROSS_DOMAIN_CONCEPTS" package="conceptscheme" maintainableParentVersion="2.0" agencyID="SDMX" id="OBS_VALUE" class="Concept"></Ref>
+              </str:ConceptIdentity>
+            </str:PrimaryMeasure>
+          </str:MeasureList>
+        </str:DataStructureComponents>
+      </str:DataStructure>
       <str:DataStructure urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=SIMM:EquitySecurity(1.0.0)" isExternalReference="false" agencyID="SIMM" id="EquitySecurity" isFinal="false" version="1.0.0">
         <com:Name xml:lang="en">Equity Security</com:Name>
         <str:DataStructureComponents>
@@ -10073,7 +10452,7 @@ The main aims of the ILO are to promote rights at work, encourage decent employm
     </str:DataStructures>
     <str:StructureSets>
       <str:StructureSet urn="urn:sdmx:org.sdmx.infomodel.mapping.StructureSet=SIMM:SS_SP01(1.0.0)" isExternalReference="false" agencyID="SIMM" id="SS_SP01" isFinal="false" version="1.0.0">
-        <com:Name xml:lang="en">Structure Set for SP01</com:Name>
+        <com:Name xml:lang="en">Logical Data Model for SiMM Solution Proposal 01</com:Name>
         <com:Description xml:lang="en">contains references for SP01. It will not be needed in SDMX 3.0, since concepts maps will be maintainable in their own right.</com:Description>
         <str:StructureMap urn="urn:sdmx:org.sdmx.infomodel.mapping.StructureMap=SIMM:SS_SP01(1.0.0).DSM_SP01_LDM_ES_ESP" id="DSM_SP01_LDM_ES_ESP">
           <com:Annotations>
@@ -10247,6 +10626,144 @@ The main aims of the ILO are to promote rights at work, encourage decent employm
             </str:Source>
             <str:Target>
               <Ref containerID="DimensionDescriptor" id="II" class="Dimension" package="datastructure"></Ref>
+            </str:Target>
+          </str:ComponentMap>
+        </str:StructureMap>
+      </str:StructureSet>
+      <str:StructureSet urn="urn:sdmx:org.sdmx.infomodel.mapping.StructureSet=SIMM:SS_SP01_AC(1.0.0)" isExternalReference="false" agencyID="SIMM" id="SS_SP01_AC" isFinal="false" version="1.0.0">
+        <com:Name xml:lang="en">Implementation Model AnaCredit example for SiMM Solution Proposal 01</com:Name>
+        <str:StructureMap urn="urn:sdmx:org.sdmx.infomodel.mapping.StructureMap=SIMM:SS_SP01_AC(1.0.0).DSM_SP01_AC_LDM_E_EI" id="DSM_SP01_AC_LDM_E_EI">
+          <com:Annotations>
+            <com:Annotation id="@ECB">
+              <com:AnnotationTitle>1..N</com:AnnotationTitle>
+              <com:AnnotationType>CARDINALITY_SOURCE2TARGET</com:AnnotationType>
+            </com:Annotation>
+            <com:Annotation id="@ECB">
+              <com:AnnotationTitle>1..1</com:AnnotationTitle>
+              <com:AnnotationType>CARDINALITY_TARGET2SOURCE</com:AnnotationType>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">AnaCredit Entity -&gt; Entitiy-Instrument</com:Name>
+          <str:Source>
+            <Ref package="datastructure" agencyID="SIMM" id="ANCRDT_ENTTY_INSTRMNT_D" version="1.0.0" class="DataStructure"></Ref>
+          </str:Source>
+          <str:Target>
+            <Ref package="datastructure" agencyID="SIMM" id="ANCRDT_ENTTY_D" version="1.0.0" class="DataStructure"></Ref>
+          </str:Target>
+          <str:ComponentMap>
+            <str:Source>
+              <Ref containerID="DimensionDescriptor" id="RIAD_II" class="Dimension" package="datastructure"></Ref>
+            </str:Source>
+            <str:Target>
+              <Ref containerID="DimensionDescriptor" id="RIAD_II" class="Dimension" package="datastructure"></Ref>
+            </str:Target>
+          </str:ComponentMap>
+        </str:StructureMap>
+        <str:StructureMap urn="urn:sdmx:org.sdmx.infomodel.mapping.StructureMap=SIMM:SS_SP01_AC(1.0.0).DSM_SP01_AC_LDM_I_EI" id="DSM_SP01_AC_LDM_I_EI">
+          <com:Annotations>
+            <com:Annotation id="@ECB">
+              <com:AnnotationTitle>1..N</com:AnnotationTitle>
+              <com:AnnotationType>CARDINALITY_SOURCE2TARGET</com:AnnotationType>
+            </com:Annotation>
+            <com:Annotation id="@ECB">
+              <com:AnnotationTitle>1..1</com:AnnotationTitle>
+              <com:AnnotationType>CARDINALITY_TARGET2SOURCE</com:AnnotationType>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">AnaCredit Instrument -&gt; Entitiy-Instrument</com:Name>
+          <str:Source>
+            <Ref package="datastructure" agencyID="SIMM" id="ANCRDT_ENTTY_INSTRMNT_D" version="1.0.0" class="DataStructure"></Ref>
+          </str:Source>
+          <str:Target>
+            <Ref package="datastructure" agencyID="SIMM" id="ANCRDT_INSTRMNT_D" version="1.0.0" class="DataStructure"></Ref>
+          </str:Target>
+          <str:ComponentMap>
+            <str:Source>
+              <Ref containerID="DimensionDescriptor" id="II" class="Dimension" package="datastructure"></Ref>
+            </str:Source>
+            <str:Target>
+              <Ref containerID="DimensionDescriptor" id="II" class="Dimension" package="datastructure"></Ref>
+            </str:Target>
+          </str:ComponentMap>
+        </str:StructureMap>
+        <str:StructureMap urn="urn:sdmx:org.sdmx.infomodel.mapping.StructureMap=SIMM:SS_SP01_AC(1.0.0).DSM_SP01_AC_LDM_I_IPR" id="DSM_SP01_AC_LDM_I_IPR">
+          <com:Annotations>
+            <com:Annotation id="@ECB">
+              <com:AnnotationTitle>1..N</com:AnnotationTitle>
+              <com:AnnotationType>CARDINALITY_SOURCE2TARGET</com:AnnotationType>
+            </com:Annotation>
+            <com:Annotation id="@ECB">
+              <com:AnnotationTitle>1..1</com:AnnotationTitle>
+              <com:AnnotationType>CARDINALITY_TARGET2SOURCE</com:AnnotationType>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">AnaCredit Instrument -&gt; Instrument-Protection received</com:Name>
+          <str:Source>
+            <Ref package="datastructure" agencyID="SIMM" id="ANCRDT_INSTRMNT_D" version="1.0.0" class="DataStructure"></Ref>
+          </str:Source>
+          <str:Target>
+            <Ref package="datastructure" agencyID="SIMM" id="ANCRDT_INSTRMNT_PRTCTN_RCVD_D" version="1.0.0" class="DataStructure"></Ref>
+          </str:Target>
+          <str:ComponentMap>
+            <str:Source>
+              <Ref containerID="DimensionDescriptor" id="II" class="Dimension" package="datastructure"></Ref>
+            </str:Source>
+            <str:Target>
+              <Ref containerID="DimensionDescriptor" id="II" class="Dimension" package="datastructure"></Ref>
+            </str:Target>
+          </str:ComponentMap>
+        </str:StructureMap>
+        <str:StructureMap urn="urn:sdmx:org.sdmx.infomodel.mapping.StructureMap=SIMM:SS_SP01_AC(1.0.0).DSM_SP01_AC_LDM_PR_IPR" id="DSM_SP01_AC_LDM_PR_IPR">
+          <com:Annotations>
+            <com:Annotation id="@ECB">
+              <com:AnnotationTitle>0..N</com:AnnotationTitle>
+              <com:AnnotationType>CARDINALITY_SOURCE2TARGET</com:AnnotationType>
+            </com:Annotation>
+            <com:Annotation id="@ECB">
+              <com:AnnotationTitle>1..1</com:AnnotationTitle>
+              <com:AnnotationType>CARDINALITY_TARGET2SOURCE</com:AnnotationType>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">AnaCredit Protection received -&gt; Instrument-Protection received</com:Name>
+          <str:Source>
+            <Ref package="datastructure" agencyID="SIMM" id="ANCRDT_PRTCTN_RCVD_D" version="1.0.0" class="DataStructure"></Ref>
+          </str:Source>
+          <str:Target>
+            <Ref package="datastructure" agencyID="SIMM" id="ANCRDT_INSTRMNT_PRTCTN_RCVD_D" version="1.0.0" class="DataStructure"></Ref>
+          </str:Target>
+          <str:ComponentMap>
+            <str:Source>
+              <Ref containerID="DimensionDescriptor" id="II" class="Dimension" package="datastructure"></Ref>
+            </str:Source>
+            <str:Target>
+              <Ref containerID="DimensionDescriptor" id="II" class="Dimension" package="datastructure"></Ref>
+            </str:Target>
+          </str:ComponentMap>
+        </str:StructureMap>
+        <str:StructureMap urn="urn:sdmx:org.sdmx.infomodel.mapping.StructureMap=SIMM:SS_SP01_AC(1.0.0).DSM_SP01_AC_LDM_E_PR" id="DSM_SP01_AC_LDM_E_PR">
+          <com:Annotations>
+            <com:Annotation id="@ECB">
+              <com:AnnotationTitle>0..N</com:AnnotationTitle>
+              <com:AnnotationType>CARDINALITY_SOURCE2TARGET</com:AnnotationType>
+            </com:Annotation>
+            <com:Annotation id="@ECB">
+              <com:AnnotationTitle>1..1</com:AnnotationTitle>
+              <com:AnnotationType>CARDINALITY_TARGET2SOURCE</com:AnnotationType>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">AnaCredit Entity -&gt; Protection received</com:Name>
+          <str:Source>
+            <Ref package="datastructure" agencyID="SIMM" id="ANCRDT_PRTCTN_RCVD_D" version="1.0.0" class="DataStructure"></Ref>
+          </str:Source>
+          <str:Target>
+            <Ref package="datastructure" agencyID="SIMM" id="ANCRDT_ENTTY_D" version="1.0.0" class="DataStructure"></Ref>
+          </str:Target>
+          <str:ComponentMap>
+            <str:Source>
+              <Ref containerID="DimensionDescriptor" id="RIAD_II" class="Dimension" package="datastructure"></Ref>
+            </str:Source>
+            <str:Target>
+              <Ref containerID="DimensionDescriptor" id="RIAD_II" class="Dimension" package="datastructure"></Ref>
             </str:Target>
           </str:ComponentMap>
         </str:StructureMap>
