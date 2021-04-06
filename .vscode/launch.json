@@ -7,7 +7,7 @@
     
         
         {
-            "name": "PowerShell: Launch Script",
+            "name": "PowerShell: Launch sdmx2gv",
             "type": "PowerShell",
             "request": "launch",
             "script": "${workspaceFolder}/sdmx2gv/runConversion.ps1",
@@ -20,6 +20,19 @@
                     //    ,"-sdmxUrl 'http://localhost:8080/ws/public/sdmxapi/rest/structureset/SIMM/SS_SP01_AC/latest/?format=sdmx-2.1&detail=full&references=all&prettyPrint=true'"   // SP01 AnaCredit example
                     //    ,"-sdmxUrl 'http://localhost:8080/ws/public/sdmxapi/rest/structureset/SIMM/SS_SP01/latest/?format=sdmx-2.1&detail=full&references=all&prettyPrint=true'"   // SP01 BIRD example
                         ,"-outputFile ${workspaceFolder}/temp/sdmx2gv"
+                    ]
+        },
+        {
+            "name": "PowerShell: Launch sdmxround",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}/sdmxround/runConversion.ps1",
+            "cwd": "${workspaceFolder}",
+            "args": [    "-Verbose" 
+                        ,"-Debug"
+                        ,"-keepInput"
+                        ,"-sdmxFile ${workspaceFolder}/sdmxround/examples/IMF_Test.xml"
+                    //    ,"-sdmxUrl 'http://dataservices.imf.org/REST/SDMX_XML.svc/CompactData/NAMAIN_IDC_N/..DZ+AM+AZ+BB+BY+BZ+BM+BO+BW+BN+BF+CV+KH+CM+HK+MO+CK+CR+CI+DO+EC+EG+SV+GE+GH+GT+HN+JM+JO+KE+KG+MG+MY+MU+MD+MC+MN+MA+MZ+NA+NI+NG+OM+PA+PY+PE+PH+RW+WS+SN+SC+SG+LK+TJ+TZ+TH+TN+TK+UG+UA+UY+UZ+VE+VN+PS+SA'"
                     ]
         }
     ]
