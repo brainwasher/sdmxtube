@@ -24,10 +24,21 @@ Param(
     #>
     $format = "svg",
     <# keep the intermediate GV file #>
-    [switch] $keepGV
+    [switch] $keepGV,
+    <# local demo mode with default parameters #>
+    [switch] $localDemo
 )
 
 Write-Output "..."
+
+if($localDemo) {
+    $sdmxUrl = "http://localhost:8080/ws/public/sdmxapi/rest/structureset/all/all/latest/?format=sdmx-2.1&detail=full&references=all&prettyPrint=true"
+    $outputFile = "../temp/output"
+    Write-Output "local demo mode with default parameters"
+    Write-Output ""
+    Write-Output "SDMX Web Service Call: $sdmxUrl"
+    Write-Output ""
+}
 
 <# TODO: show help for all parameters if no parameters provided #>
 if (($null -eq $sdmxFile) -and ($null -eq $sdmxUrl)) { throw "Either -sdmxUrl or -sdmxFile must be provided"}
@@ -126,8 +137,10 @@ if (-not $keepGV) {
 }
 
 Write-Output ""
-Write-Output "Conversion done, open it with:"
+Write-Output "Conversion done, open result with:"
 Write-Output " start $outputFile"
 
 Write-Output ""
 Write-Output ""
+
+if($localDemo) { Invoke-Expression "start $outputFile" }
