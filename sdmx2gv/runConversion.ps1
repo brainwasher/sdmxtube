@@ -29,6 +29,7 @@ Param(
 
 Write-Output "..."
 
+<# TODO: show help for all parameters if no parameters provided #>
 if (($null -eq $sdmxFile) -and ($null -eq $sdmxUrl)) { throw "Either -sdmxUrl or -sdmxFile must be provided"}
 
 <# global variables #>
