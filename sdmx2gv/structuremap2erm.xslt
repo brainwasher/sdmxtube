@@ -75,22 +75,33 @@
 		</xsl:for-each>
 		
 		<!-- loop through structure sets for creating clusters -->
+		<!-- FIXME: currently the entities are not yet clustered, only the relations. That creates an issue for relations across clusters -->
 		<xsl:for-each select=".//str:StructureSet">
+
 			<xsl:text> 
 				// Structure set for cluster: </xsl:text><xsl:call-template name="artefactIdentifier">	<xsl:with-param name="artefactNode" select="."/></xsl:call-template>
-			<xsl:text>
-				subgraph cluster_</xsl:text><xsl:value-of select="./@id" />
-			<xsl:text> { bgcolor="floralwhite" label="</xsl:text>
-				<xsl:value-of select="./com:Name" />
-			<xsl:text>\n</xsl:text>
-				<xsl:call-template name="artefactIdentifier"><xsl:with-param name="artefactNode" select="."/></xsl:call-template>
-			<xsl:text>\n "</xsl:text>
+			<!-- annotations exist: data model mapping -> build cluster -->
+			<xsl:if test="count(./str:StructureMap/com:Annotations/com:Annotation) gt 0">
+				<xsl:text>
+					subgraph cluster_</xsl:text><xsl:value-of select="./@id" />
+				<xsl:text> { bgcolor="floralwhite" label="</xsl:text>
+					<xsl:value-of select="./com:Name" />
+				<xsl:text>\n</xsl:text>
+					<xsl:call-template name="artefactIdentifier"><xsl:with-param name="artefactNode" select="."/></xsl:call-template>
+				<xsl:text>\n "</xsl:text>
+			</xsl:if>
+
 			<!-- loop through structure maps for creating connectors -->
 			<xsl:for-each select="./str:StructureMap">
 				"<xsl:value-of select="./str:Target/Ref/@agencyID" />:<xsl:value-of select="./str:Target/Ref/@id" />(<xsl:value-of select="./str:Target/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Target/Ref/@id" />
 				-> <!-- TODO: MAPPINGS: no arrow with two-dashes symbol instead of -> for mappings (search for no existing annotation with cardinaltiy) --> 
 				"<xsl:value-of select="./str:Source/Ref/@agencyID" />:<xsl:value-of select="./str:Source/Ref/@id" />(<xsl:value-of select="./str:Source/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Source/Ref/@id" />
 				<xsl:text> [</xsl:text>
+
+				<!-- no annotations -> plain dotted line -->
+				<xsl:if test="count(./com:Annotations/com:Annotation) = 0">
+					<xsl:text> arrowtail="none" arrowhead="none" style="dotted" color="navy" </xsl:text>
+				</xsl:if>
 
 				<!-- read cardinality annotations -->
 				<xsl:for-each select="./com:Annotations/com:Annotation">
@@ -106,13 +117,16 @@
 							<xsl:text> arrowhead="</xsl:text>
 							<xsl:call-template name="cardinalityArrow">	<xsl:with-param name="AnnotationTitle" select="./com:AnnotationTitle"/></xsl:call-template>
 							<xsl:text>" </xsl:text>
-						</xsl:when>					
+						</xsl:when>	
 					</xsl:choose>
 							
 				</xsl:for-each>
 				<xsl:text>] </xsl:text>
 			</xsl:for-each> <!-- end structureMap (=relationships) -->
-			<xsl:text> } </xsl:text>
+			<!-- close cluster -->
+			<xsl:if test="count(./str:StructureMap/com:Annotations/com:Annotation) gt 0">
+				<xsl:text> } </xsl:text>
+			</xsl:if>
 		</xsl:for-each> <!-- end strucutreSet (=cluster) -->
 	</xsl:template>
 
