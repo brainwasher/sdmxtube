@@ -48,7 +48,7 @@
 				,
 				URL="<xsl:value-of select="$registryRestEndpoint"/>datastructure/<xsl:value-of select="@agencyID" />/<xsl:value-of select="@id" />/<xsl:value-of select="@version" />",
 				target=_blank,
-				label=" <!-- TODO: convert to HTML label and all text to HTML table to support enhanced formatting ( label=< instead of label=" ) -->
+				label="
 
 					<!-- DSD name -->
 					<xsl:value-of select="./com:Name" />
@@ -75,7 +75,6 @@
 		</xsl:for-each>
 		
 		<!-- loop through structure sets for creating clusters -->
-		<!-- FIXME: currently the entities are not yet clustered, only the relations. That creates an issue for relations across clusters -->
 		<xsl:for-each select=".//str:StructureSet">
 
 			<xsl:text> 
@@ -94,7 +93,7 @@
 			<!-- loop through structure maps for creating connectors -->
 			<xsl:for-each select="./str:StructureMap">
 				"<xsl:value-of select="./str:Target/Ref/@agencyID" />:<xsl:value-of select="./str:Target/Ref/@id" />(<xsl:value-of select="./str:Target/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Target/Ref/@id" />
-				-> <!-- TODO: MAPPINGS: no arrow with two-dashes symbol instead of -> for mappings (search for no existing annotation with cardinaltiy) --> 
+				->  
 				"<xsl:value-of select="./str:Source/Ref/@agencyID" />:<xsl:value-of select="./str:Source/Ref/@id" />(<xsl:value-of select="./str:Source/Ref/@version" />)":<xsl:value-of select="./str:ComponentMap[1]/str:Source/Ref/@id" />
 				<xsl:text> [</xsl:text>
 
