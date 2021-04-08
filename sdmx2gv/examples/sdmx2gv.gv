@@ -1,4 +1,4 @@
-digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Generator\nhttps://github.com/brainwasher/sdmxtube\n\ngraph generated 2021-04-06T15:07:58.041+02:00"; 
+digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Generator\nhttps://github.com/brainwasher/sdmxtube\n\ngraph generated 2021-04-08T11:47:12.754+02:00"; 
   
   "SIMM:ANCRDT_ENTTY_D(1.0.0)"
 			
@@ -7,7 +7,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/ANCRDT_ENTTY_D/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Entity
@@ -55,7 +55,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/ANCRDT_ENTTY_INSTRMNT_D/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Equity-instrument
@@ -124,7 +124,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/ANCRDT_INSTRMNT_D/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Instrument
@@ -193,7 +193,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/ANCRDT_INSTRMNT_PRTCTN_RCVD_D/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Instrument-Protection Received
@@ -262,7 +262,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/ANCRDT_PRTCTN_RCVD_D/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Protection Received
@@ -324,7 +324,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurity/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Equity Security
@@ -365,7 +365,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/EquitySecurityPosition/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Equity security position
@@ -406,7 +406,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/FinancialAsset/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Financial asset
@@ -440,7 +440,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/FinancialAsset_ESP/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Financial asset in the form of an Equity security position
@@ -481,7 +481,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/FinancialAsset_Inst/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Financial asset in the form of an instrument
@@ -515,7 +515,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/Instrument/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Instrument
@@ -556,7 +556,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				,
 				URL="http://localhost:8080/ws/public/sdmxapi/rest/datastructure/SIMM/Party/1.0.0",
 				target=_blank,
-				label=" 
+				label="
 
 					
 					Party
@@ -577,8 +577,9 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				",
 			];
 		 
+				// Structure set for cluster: SIMM:SS_BIRD_AC(1.0.0) 
 				// Structure set for cluster: SIMM:SS_SP01(1.0.0)
-				subgraph cluster_SS_SP01 { bgcolor="floralwhite" label="Logical Data Model for SiMM Solution Proposal 01\nSIMM:SS_SP01(1.0.0)\n "
+					subgraph cluster_SS_SP01 { bgcolor="floralwhite" label="Logical Data Model for SiMM Solution Proposal 01\nSIMM:SS_SP01(1.0.0)\n "
 				"SIMM:EquitySecurityPosition(1.0.0)":ESI
 				->  
 				"SIMM:EquitySecurity(1.0.0)":ESI [ dir="both" arrowtail="crowodot"  arrowhead="teetee" ] 
@@ -598,7 +599,7 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				->  
 				"SIMM:Instrument(1.0.0)":II [ arrowhead="teetee"  dir="both" arrowtail="teeodot" ]  }  
 				// Structure set for cluster: SIMM:SS_SP01_AC(1.0.0)
-				subgraph cluster_SS_SP01_AC { bgcolor="floralwhite" label="Implementation Model AnaCredit example for SiMM Solution Proposal 01\nSIMM:SS_SP01_AC(1.0.0)\n "
+					subgraph cluster_SS_SP01_AC { bgcolor="floralwhite" label="Implementation Model AnaCredit example for SiMM Solution Proposal 01\nSIMM:SS_SP01_AC(1.0.0)\n "
 				"SIMM:ANCRDT_ENTTY_D(1.0.0)":RIAD_II
 				->  
 				"SIMM:ANCRDT_ENTTY_INSTRMNT_D(1.0.0)":RIAD_II [ dir="both" arrowtail="crowtee"  arrowhead="teetee" ] 
@@ -608,9 +609,9 @@ digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Ge
 				"SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0)":II
 				->  
 				"SIMM:ANCRDT_INSTRMNT_D(1.0.0)":II [ dir="both" arrowtail="crowtee"  arrowhead="teetee" ] 
-				"SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0)":II
+				"SIMM:ANCRDT_INSTRMNT_PRTCTN_RCVD_D(1.0.0)":PI
 				->  
-				"SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0)":II [ dir="both" arrowtail="crowodot"  arrowhead="teetee" ] 
+				"SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0)":PI [ dir="both" arrowtail="crowodot"  arrowhead="teetee" ] 
 				"SIMM:ANCRDT_ENTTY_D(1.0.0)":RIAD_II
 				->  
-				"SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0)":RIAD_II [ dir="both" arrowtail="crowodot"  arrowhead="teetee" ]  } }
+				"SIMM:ANCRDT_PRTCTN_RCVD_D(1.0.0)":OAI [ dir="both" arrowtail="crowodot"  arrowhead="teetee" ]  } }

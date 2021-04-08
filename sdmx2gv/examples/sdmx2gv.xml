@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <mes:Structure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
   <mes:Header>
-    <mes:ID>IREF144792</mes:ID>
+    <mes:ID>IREF751304</mes:ID>
     <mes:Test>false</mes:Test>
-    <mes:Prepared>2021-04-06T13:07:55Z</mes:Prepared>
+    <mes:Prepared>2021-04-08T09:45:38Z</mes:Prepared>
     <mes:Sender id="Unknown"></mes:Sender>
     <mes:Receiver id="not_supplied"></mes:Receiver>
   </mes:Header>
@@ -92,7 +92,6 @@ The main aims of the ILO are to promote rights at work, encourage decent employm
         </str:Agency>
         <str:Agency urn="urn:sdmx:org.sdmx.infomodel.base.Agency=IBGE" id="IBGE">
           <com:Name xml:lang="en">The Brazilian Institute of Geography and Statistics</com:Name>
-          <com:Name xml:lang="br">Instituto Brasileiro de Geografia e Estatística</com:Name>
         </str:Agency>
         <str:Agency urn="urn:sdmx:org.sdmx.infomodel.base.Agency=NG_NSB" id="NG_NSB">
           <com:Name xml:lang="en">Nigerian National Bureau of Statistics (NBS)</com:Name>
@@ -10451,6 +10450,9 @@ The main aims of the ILO are to promote rights at work, encourage decent employm
       </str:DataStructure>
     </str:DataStructures>
     <str:StructureSets>
+      <str:StructureSet urn="urn:sdmx:org.sdmx.infomodel.mapping.StructureSet=SIMM:SS_BIRD_AC(1.0.0)" isExternalReference="false" agencyID="SIMM" id="SS_BIRD_AC" isFinal="false" version="1.0.0">
+        <com:Name xml:lang="en">Integration between BIRD and AnaCredit</com:Name>
+      </str:StructureSet>
       <str:StructureSet urn="urn:sdmx:org.sdmx.infomodel.mapping.StructureSet=SIMM:SS_SP01(1.0.0)" isExternalReference="false" agencyID="SIMM" id="SS_SP01" isFinal="false" version="1.0.0">
         <com:Name xml:lang="en">Logical Data Model for SiMM Solution Proposal 01</com:Name>
         <com:Description xml:lang="en">contains references for SP01. It will not be needed in SDMX 3.0, since concepts maps will be maintainable in their own right.</com:Description>
@@ -10733,10 +10735,10 @@ The main aims of the ILO are to promote rights at work, encourage decent employm
           </str:Target>
           <str:ComponentMap>
             <str:Source>
-              <Ref containerID="DimensionDescriptor" id="II" class="Dimension" package="datastructure"></Ref>
+              <Ref containerID="DimensionDescriptor" id="PI" class="Dimension" package="datastructure"></Ref>
             </str:Source>
             <str:Target>
-              <Ref containerID="DimensionDescriptor" id="II" class="Dimension" package="datastructure"></Ref>
+              <Ref containerID="DimensionDescriptor" id="PI" class="Dimension" package="datastructure"></Ref>
             </str:Target>
           </str:ComponentMap>
         </str:StructureMap>
@@ -10760,7 +10762,7 @@ The main aims of the ILO are to promote rights at work, encourage decent employm
           </str:Target>
           <str:ComponentMap>
             <str:Source>
-              <Ref containerID="DimensionDescriptor" id="RIAD_II" class="Dimension" package="datastructure"></Ref>
+              <Ref containerID="DimensionDescriptor" id="OAI" class="Dimension" package="datastructure"></Ref>
             </str:Source>
             <str:Target>
               <Ref containerID="DimensionDescriptor" id="RIAD_II" class="Dimension" package="datastructure"></Ref>
