@@ -11,7 +11,7 @@ Param(
         TODO: support SDMX message piped in directly.
         TODO: set as defalt parameter of provided without -sdmx flag
         The default fetches everything form the default URL of a local Docker container with Fusion Registry. 
-        Any SDMX 2.1 REST URL that returns at leat a DSD and a StructureSet with a StructureMap and ComponentMap will work
+        Any SDMX 2.1 REST URL that returns at least a DSD and a StructureSet with a StructureMap and ComponentMap will work
      #>
     [parameter(ValueFromPipeline)] $sdmxUrl,
     <#  name of the XML file used. If sdmxUrl is set, that will be the download file and it will be kept. If sdmxUrl is not set, it will be the file used for conversion #>
@@ -26,7 +26,9 @@ Param(
     <# keep the intermediate GV file #>
     [switch] $keepGV,
     <# local demo mode with default parameters #>
-    [switch] $localDemo
+    [switch] $localDemo,
+    <# open output file automatically #>
+    [switch] $autoOpen
 )
 
 Write-Output "..."
@@ -143,4 +145,4 @@ Write-Output " start $outputFile"
 Write-Output ""
 Write-Output ""
 
-if($localDemo) { Invoke-Expression "start $outputFile" }
+if($localDemo -or $autoOpen) { Invoke-Expression "start $outputFile" }

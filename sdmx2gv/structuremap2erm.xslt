@@ -7,7 +7,7 @@
 	<xsl:output method="text" media-type="text/vnd.graphviz"/>
 	<xsl:include href="../lib/xslt/libsdmx.xslt"/><!-- SDMX library -->
 
-	<!-- as the base REST URL of the registry here with trailing /.  -->
+	<!-- add the base REST URL of the registry here with trailing /.  -->
 	<!-- That will add the REST links to the artefacts in the graph (e.g. SVG output) -->
 	<!-- the default value points to the standard Docker image config of Fusion Metadata Registry -->
 	<xsl:param name="registryRestEndpoint" select="'http://localhost:8080/ws/public/sdmxapi/rest/'" />
@@ -20,7 +20,7 @@
 
 	<xsl:template match="/">
 		<!-- draw directed graph from left to right (LR) -->
-		<xsl:text>digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX Data Model Visualisation Generator\nhttps://github.com/brainwasher/sdmxtube\n\ngraph generated </xsl:text>
+		<xsl:text>digraph DependecyMap { rankdir=LR; label="\n\n\nSDMX 2.1 Data Model Visualisation Generator\n(TimeDimension and PrimaryMeasure hidden)\n\nhttps://github.com/brainwasher/sdmxtube\n\ngraph generated </xsl:text>
 		<xsl:value-of select="current-dateTime()" />
 		<xsl:text>"; </xsl:text>
 		<xsl:apply-templates />
@@ -56,7 +56,10 @@
 					|{<xsl:value-of select="@agencyID" />|<xsl:value-of select="@id" />|<xsl:value-of select="@version" />}
 
 					<!-- all dimensions -->
-					<xsl:for-each select=".//str:DimensionList/str:Dimension | .//str:DimensionList/str:TimeDimension"> 
+					<!-- TODO: this next row would show the time dimension. It is now hidden since in SDMX 3 it is not anymore needed... 
+						<xsl:for-each select=".//str:DimensionList/str:Dimension | .//str:DimensionList/str:TimeDimension"> 
+					-->
+					<xsl:for-each select=".//str:DimensionList/str:Dimension"> 
 						<xsl:call-template name="conceptLabel">
 							<xsl:with-param name="conceptNode" select="."/>
 						</xsl:call-template>
